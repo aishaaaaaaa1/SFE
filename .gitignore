@@ -1,0 +1,10 @@
+node_modules/
+.vscode/
+*.log
+*.tmp
+.DS_Store
+
+# Build / output folders (add more if your project generates them)
+dist/
+build/
+coverage/

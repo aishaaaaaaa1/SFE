@@ -1,0 +1,12 @@
+Dossier des PDF de réglementation
+=================================
+
+Les fichiers .pdf listés ici sont servis en téléchargement depuis les pages
+reg-dahirs.html, reg-decrets.html, reg-circulaires.html et reg-arretes.html.
+
+Pour mettre à jour un texte officiel : remplacez le fichier portant le même nom,
+ou modifiez le nom du fichier dans scripts/generate-pages.mjs puis exécutez :
+  npm run pages
+
+Pour régénérer les modèles d’exemple (pdf-lib) :
+  npm run reg-pdfs

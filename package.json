@@ -1,0 +1,12 @@
+{
+  "name": "sfe-audoe",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "reg-pdfs": "node scripts/generate-reg-pdfs.mjs",
+    "pages": "node scripts/generate-pages.mjs"
+  },
+  "devDependencies": {
+    "pdf-lib": "^1.17.1"
+  }
+}
