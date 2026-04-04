@@ -246,9 +246,15 @@ const P = {
       <a class="doc-card" href="service-bod.html"><span class="doc-card-title">Bureau d’ordre</span><span class="doc-card-meta">Dépôt d’une demande papier ou numérique</span></a>
     </div>
     <h2 id="telecharger-pdf">Télécharger — fichiers PDF</h2>
-    <p class="hint">Documents au format PDF. Vous pouvez remplacer ces fichiers par les versions officielles dans le dossier <code>assets/reglementation/</code> (voir <code>LISEZ-MOI.txt</code>).</p>
+    <p class="hint">Fichiers hébergés dans <code>assets/reglementation/</code> (voir <code>LISEZ-MOI.txt</code>).</p>
     <div class="doc-grid">
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/dahir-1-93-51-agences-urbaines.pdf" download="dahir-1-93-51-agences-urbaines.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Dahir n°&nbsp;1-93-51 — agences urbaines</span><span class="doc-card-meta">Cliquer pour télécharger</span></a>
+      <a class="doc-card doc-card-pdf" href="../assets/reglementation/dahir-1-93-51-agences-urbaines.pdf" download="dahir-1-93-51-agences-urbaines.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Dahir n°&nbsp;1-93-51 — agences urbaines</span><span class="doc-card-meta">Téléchargement</span></a>
+      <a class="doc-card doc-card-pdf" href="../assets/reglementation/dahir-1-11-161.pdf" download="dahir-1-11-161.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Dahir n°&nbsp;1-11-161</span><span class="doc-card-meta">Téléchargement</span></a>
+      <a class="doc-card doc-card-pdf" href="../assets/reglementation/dahir-1-15-87.pdf" download="dahir-1-15-87.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Dahir n°&nbsp;1-15-87</span><span class="doc-card-meta">Téléchargement</span></a>
+      <a class="doc-card doc-card-pdf" href="../assets/reglementation/dahir-1-92-7.pdf" download="dahir-1-92-7.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Dahir n°&nbsp;1-92-7</span><span class="doc-card-meta">Téléchargement</span></a>
+      <a class="doc-card doc-card-pdf" href="../assets/reglementation/dahir-1-60-063.pdf" download="dahir-1-60-063.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Dahir n°&nbsp;1-60-063</span><span class="doc-card-meta">Téléchargement</span></a>
+      <a class="doc-card doc-card-pdf" href="../assets/reglementation/dahir-1-92-31.pdf" download="dahir-1-92-31.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Dahir n°&nbsp;1-92-31</span><span class="doc-card-meta">Téléchargement</span></a>
+      <a class="doc-card doc-card-pdf" href="../assets/reglementation/dahir-portant-loi-1-84-150.pdf" download="dahir-portant-loi-1-84-150.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Dahir portant loi n°&nbsp;1-84-150</span><span class="doc-card-meta">Téléchargement</span></a>
     </div>
     <h2 id="envoyer-pdf">Téléverser un PDF</h2>
     <p class="hint">Sélectionnez un PDF sur votre ordinateur, puis validez : la messagerie s’ouvre avec un texte prérempli. <strong>Joignez manuellement le fichier</strong> à l’e-mail avant envoi (les pages statiques ne peuvent pas attacher le fichier automatiquement).</p>
@@ -286,9 +292,12 @@ const P = {
       <a class="doc-card" href="service-bod.html"><span class="doc-card-title">Bureau d’ordre</span><span class="doc-card-meta">Dépôt d’une demande</span></a>
     </div>
     <h2 id="telecharger-pdf">Télécharger — fichiers PDF</h2>
-    <p class="hint">Remplacez ces modèles par les extraits du Bulletin officiel si nécessaire (<code>assets/reglementation/</code>).</p>
+    <p class="hint">Fichiers dans <code>assets/reglementation/</code>.</p>
     <div class="doc-grid">
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/decret-2-03-221-creation-audoe.pdf" download="decret-2-03-221-creation-audoe.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Décret n°&nbsp;2-03-221 — création AUDOE</span><span class="doc-card-meta">Cliquer pour télécharger</span></a>
+      <a class="doc-card doc-card-pdf" href="../assets/reglementation/decret-2-03-221-creation-audoe.pdf" download="decret-2-03-221-creation-audoe.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Décret n°&nbsp;2-03-221 — création AUDOE</span><span class="doc-card-meta">Téléchargement</span></a>
+      <a class="doc-card doc-card-pdf" href="../assets/reglementation/decret-2-13-874.pdf" download="decret-2-13-874.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Décret n°&nbsp;2-13-874</span><span class="doc-card-meta">Téléchargement</span></a>
+      <a class="doc-card doc-card-pdf" href="../assets/reglementation/decret-2-17-634.pdf" download="decret-2-17-634.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Décret n°&nbsp;2-17-634</span><span class="doc-card-meta">Téléchargement</span></a>
+      <a class="doc-card doc-card-pdf" href="../assets/reglementation/decret-2-18-577.pdf" download="decret-2-18-577.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Décret n°&nbsp;2-18-577</span><span class="doc-card-meta">Téléchargement</span></a>
     </div>
     <h2 id="envoyer-pdf">Téléverser un PDF</h2>
     <p class="hint">Sélectionnez un PDF, puis joignez-le manuellement dans l’e-mail qui s’ouvre.</p>
@@ -320,16 +329,24 @@ const P = {
     </div>
     <h2 id="catalogue-circulaires">Catalogue indicatif — circulaires</h2>
     <div class="doc-grid">
-      <article class="doc-card doc-card-static"><span class="doc-card-title">Circulaire n°&nbsp;2259-1257</span><span class="doc-card-meta">Contrôle et sanctions — urbanisme</span></article>
-      <article class="doc-card doc-card-static"><span class="doc-card-title">Circulaire conjointe n°&nbsp;2911</span><span class="doc-card-meta">Contrôle d’urbanisme et de la construction</span></article>
+      <article class="doc-card doc-card-static"><span class="doc-card-title">Circulaires ministérielles</span><span class="doc-card-meta">PDF disponibles ci-dessous</span></article>
       <a class="doc-card" href="mailto:agencedakhla@gmail.com?subject=Demande%20circulaire"><span class="doc-card-title">Demande de document</span><span class="doc-card-meta">agencedakhla@gmail.com</span></a>
       <a class="doc-card" href="service-bod.html"><span class="doc-card-title">Bureau d’ordre</span><span class="doc-card-meta">Dépôt d’une demande</span></a>
     </div>
     <h2 id="telecharger-pdf">Télécharger — fichiers PDF</h2>
-    <p class="hint">Modèles PDF — à substituer par les circulaires officielles scannées si besoin.</p>
+    <p class="hint">Fichiers dans <code>assets/reglementation/</code>.</p>
     <div class="doc-grid">
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/circulaire-2259-1257-controle-urbanisme.pdf" download="circulaire-2259-1257-controle-urbanisme.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Circulaire 2259-1257</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/circulaire-2911-controle-construction.pdf" download="circulaire-2911-controle-construction.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Circulaire conjointe 2911</span><span class="doc-card-meta">Téléchargement</span></a>
+      <a class="doc-card doc-card-pdf" href="../assets/reglementation/circulaire-005.pdf" download="circulaire-005.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Circulaire n°&nbsp;005</span><span class="doc-card-meta">Téléchargement</span></a>
+      <a class="doc-card doc-card-pdf" href="../assets/reglementation/circulaire-10098.pdf" download="circulaire-10098.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Circulaire n°&nbsp;10098</span><span class="doc-card-meta">Téléchargement</span></a>
+      <a class="doc-card doc-card-pdf" href="../assets/reglementation/circulaire-12-96.pdf" download="circulaire-12-96.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Circulaire n°&nbsp;12-96</span><span class="doc-card-meta">Téléchargement</span></a>
+      <a class="doc-card doc-card-pdf" href="../assets/reglementation/circulaire-14-2000.pdf" download="circulaire-14-2000.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Circulaire n°&nbsp;14-2000</span><span class="doc-card-meta">Téléchargement</span></a>
+      <a class="doc-card doc-card-pdf" href="../assets/reglementation/circulaire-1500-2000.pdf" download="circulaire-1500-2000.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Circulaire n°&nbsp;1500-2000</span><span class="doc-card-meta">Téléchargement</span></a>
+      <a class="doc-card doc-card-pdf" href="../assets/reglementation/circulaire-222.pdf" download="circulaire-222.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Circulaire n°&nbsp;222</span><span class="doc-card-meta">Téléchargement</span></a>
+      <a class="doc-card doc-card-pdf" href="../assets/reglementation/circulaire-254.pdf" download="circulaire-254.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Circulaire n°&nbsp;254</span><span class="doc-card-meta">Téléchargement</span></a>
+      <a class="doc-card doc-card-pdf" href="../assets/reglementation/circulaire-399.pdf" download="circulaire-399.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Circulaire n°&nbsp;399</span><span class="doc-card-meta">Téléchargement</span></a>
+      <a class="doc-card doc-card-pdf" href="../assets/reglementation/circulaire-4210-2842.pdf" download="circulaire-4210-2842.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Circulaire n°&nbsp;4210-2842</span><span class="doc-card-meta">Téléchargement</span></a>
+      <a class="doc-card doc-card-pdf" href="../assets/reglementation/circulaire-65.pdf" download="circulaire-65.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Circulaire n°&nbsp;65</span><span class="doc-card-meta">Téléchargement</span></a>
+      <a class="doc-card doc-card-pdf" href="../assets/reglementation/circulaire-derogation.pdf" download="circulaire-derogation.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Circulaire — dérogation</span><span class="doc-card-meta">Téléchargement</span></a>
     </div>
     <h2 id="envoyer-pdf">Téléverser un PDF</h2>
     <p class="hint">Envoi via votre messagerie — pensez à joindre le fichier PDF.</p>
@@ -367,9 +384,9 @@ const P = {
       <a class="doc-card" href="service-bod.html"><span class="doc-card-title">Bureau d’ordre</span><span class="doc-card-meta">Dépôt d’une demande</span></a>
     </div>
     <h2 id="telecharger-pdf">Télécharger — fichiers PDF</h2>
-    <p class="hint">Modèle d’arrêté-type — remplacez par les arrêtés réels au format PDF dans <code>assets/reglementation/</code>.</p>
+    <p class="hint">Fichiers dans <code>assets/reglementation/</code>.</p>
     <div class="doc-grid">
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/arrete-modele-urbanisme-audoe.pdf" download="arrete-modele-urbanisme-audoe.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Arrêté-type — urbanisme</span><span class="doc-card-meta">Téléchargement</span></a>
+      <a class="doc-card doc-card-pdf" href="../assets/reglementation/arrete-338-20.pdf" download="arrete-338-20.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Arrêté n°&nbsp;338-20</span><span class="doc-card-meta">Téléchargement</span></a>
     </div>
     <h2 id="envoyer-pdf">Téléverser un PDF</h2>
     <p class="hint">Transmettre un arrêté ou une pièce (PDF) : ouverture de la messagerie — joindre le fichier manuellement.</p>

@@ -8,5 +8,8 @@ Pour mettre à jour un texte officiel : remplacez le fichier portant le même no
 ou modifiez le nom du fichier dans scripts/generate-pages.mjs puis exécutez :
   npm run pages
 
-Pour régénérer les modèles d’exemple (pdf-lib) :
-  npm run reg-pdfs
+Les sources brutes peuvent être regroupées dans le dossier pdf/ à la racine du
+projet, puis copiées ici avec des noms stables (voir scripts/generate-pages.mjs).
+
+La commande npm run reg-pdfs ne génère plus de modèles par défaut (évite
+d’écraser les PDF réels).
