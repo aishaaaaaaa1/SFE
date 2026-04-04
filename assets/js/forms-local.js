@@ -163,6 +163,88 @@
     showStep(1);
   }
 
+  var standaloneContactForm = document.getElementById('form-contact-standalone');
+  if (standaloneContactForm) {
+    standaloneContactForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var nom = document.getElementById('cs-nom').value.trim();
+      var email = document.getElementById('cs-email').value.trim();
+      var tel = document.getElementById('cs-tel').value.trim();
+      var sujet = document.getElementById('cs-sujet').value.trim();
+      var msg = document.getElementById('cs-msg').value.trim();
+      var cap = document.getElementById('cs-captcha').value.trim();
+      if (!nom || !email || !sujet || !msg) {
+        alert('Veuillez remplir tous les champs obligatoires.');
+        return;
+      }
+      if (parseInt(cap, 10) !== 7) {
+        alert('Réponse incorrecte à la question anti-robot (5 + 2).');
+        return;
+      }
+      var textBody =
+        'Contact — AUDOE Dakhla – Oued Eddahab\r\n\r\n' +
+        'Nom : ' +
+        nom +
+        '\r\nE-mail : ' +
+        email +
+        '\r\nTéléphone : ' +
+        (tel || '—') +
+        '\r\nSujet : ' +
+        sujet +
+        '\r\n\r\nMessage :\r\n' +
+        msg +
+        '\r\n\r\n---\r\nMessage généré depuis la page Contact du site.';
+      standaloneContactForm.setAttribute('hidden', '');
+      var succ = document.getElementById('contact-standalone-success');
+      if (succ) {
+        succ.removeAttribute('hidden');
+        var a = succ.querySelector('.js-mailto-contact-standalone');
+        if (a) a.href = mailtoLink('agencedakhla@gmail.com', sujet + ' — Contact AUDOE', textBody);
+      }
+    });
+  }
+
+  var creationForm = document.getElementById('form-creation-contact');
+  if (creationForm) {
+    creationForm.addEventListener('submit', function (e) {
+      e.preventDefault();
+      var nom = document.getElementById('cc-nom').value.trim();
+      var email = document.getElementById('cc-email').value.trim();
+      var tel = document.getElementById('cc-tel').value.trim();
+      var sujet = document.getElementById('cc-sujet').value.trim();
+      var msg = document.getElementById('cc-msg').value.trim();
+      var cap = document.getElementById('cc-captcha').value.trim();
+      if (!nom || !email || !sujet || !msg) {
+        alert('Veuillez remplir tous les champs obligatoires.');
+        return;
+      }
+      if (parseInt(cap, 10) !== 7) {
+        alert('Réponse incorrecte à la question anti-robot (3 + 4).');
+        return;
+      }
+      var textBody =
+        'Message depuis la page Création — AUDOE\r\n\r\n' +
+        'Nom : ' +
+        nom +
+        '\r\nE-mail : ' +
+        email +
+        '\r\nTéléphone : ' +
+        (tel || '—') +
+        '\r\nSujet : ' +
+        sujet +
+        '\r\n\r\nMessage :\r\n' +
+        msg +
+        '\r\n\r\n---\r\nMessage généré depuis le site.';
+      creationForm.setAttribute('hidden', '');
+      var succ = document.getElementById('creation-contact-success');
+      if (succ) {
+        succ.removeAttribute('hidden');
+        var a = succ.querySelector('.js-mailto-creation');
+        if (a) a.href = mailtoLink('agencedakhla@gmail.com', sujet + ' — Contact AUDOE', textBody);
+      }
+    });
+  }
+
   document.querySelectorAll('form.reg-upload-form').forEach(function (form) {
     form.addEventListener('submit', function (e) {
       e.preventDefault();

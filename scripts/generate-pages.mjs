@@ -182,6 +182,17 @@ const P = {
     body: `<p>Pour une demande d’accès à l’information au sens du cadre légal (Chafafiya), utilisez le formulaire national.</p>
 <div class="cta-strip"><p>Portail Chafafiya</p><a class="btn-primary" href="http://www.chafafiya.ma/demande.php" target="_blank" rel="noopener noreferrer">Déposer une demande</a></div>`,
   },
+  'contact.html': {
+    title: 'Contact · AUDOE Dakhla',
+    tag: 'Contact',
+    heading: 'Nous contacter',
+    wide: true,
+    breadcrumb: [
+      ['Accueil', '../index.html'],
+      ['Contact'],
+    ],
+    body: '',
+  },
   'service-taamir.html': {
     title: 'Taamir · Documents d’urbanisme',
     tag: 'Services en ligne',
@@ -505,6 +516,7 @@ const P = {
 <li><a href="reg-arretes.html">Arrêtés</a></li>
 </ul></div>
 <div class="plan-list-section"><h3>Autres</h3><ul>
+<li><a href="contact.html">Contact</a></li>
 <li><a href="actualites.html">Actualités</a></li>
 <li><a href="avis-annonces.html">Avis & annonces</a></li>
 <li><a href="galerie.html">Galerie</a></li>
@@ -584,6 +596,7 @@ function navHtml(assetPrefix) {
           <a href="${p('reg-arretes.html')}">Arrêtés</a>
         </div>
       </div>
+      <a href="${p('contact.html')}" class="nav-link">Contact</a>
       <a href="${p('service-preinstruction.html')}" class="nav-link header-cta">Pré-instruction en ligne</a>
       <a href="${p('version-arabe.html')}" class="lang-btn">🇲🇦 العربية</a>
     </nav>
@@ -603,6 +616,7 @@ function mobileHtml(assetPrefix) {
   <a href="${p('planif-documents.html')}">Planification Urbaine</a>
   <a href="${p('service-preinstruction.html')}">Services en Ligne</a>
   <a href="${p('reg-dahirs.html')}">Réglementation</a>
+  <a href="${p('contact.html')}">Contact</a>
   <a href="${p('service-preinstruction.html')}" style="color:var(--gold-light);font-weight:600">Pré-instruction en ligne →</a>
 </div>`;
 }
@@ -632,6 +646,7 @@ function footerHtml(assetPrefix) {
         <li><a href="${p('planif-documents.html')}">Planification</a></li>
         <li><a href="${p('service-preinstruction.html')}">Services en ligne</a></li>
         <li><a href="${p('reg-dahirs.html')}">Réglementation</a></li>
+        <li><a href="${p('contact.html')}">Contact</a></li>
         <li><a href="${p('avis-annonces.html')}">Avis & Annonces</a></li>
       </ul>
     </div>
@@ -724,6 +739,7 @@ ${mobileHtml(assetPrefix)}
 ${footerHtml(assetPrefix)}
 <script src="${assetPrefix}assets/js/main.js"></script>
 <script src="${assetPrefix}assets/js/forms-local.js"></script>
+${(data.extraScripts || []).map((s) => `<script src="${assetPrefix}${s}"></script>`).join('\n')}
 </body>
 </html>`;
 }

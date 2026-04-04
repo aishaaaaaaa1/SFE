@@ -1,0 +1,7 @@
+Dossier réservé aux PDF des documents d’urbanisme (plans d’aménagement, extraits, annexes).
+
+1. Déposez ici les fichiers .pdf.
+2. Dans assets/js/docs-urbanisme-catalog.js, renseignez le champ "pdf" de l’entrée concernée, par exemple :
+   pdf: "../assets/docs-urbanisme/nom-du-fichier.pdf"
+
+Les pages sont régénérées avec : npm run pages (ou node scripts/generate-pages.mjs).

@@ -1,8 +1,20 @@
 (function () {
   var header = document.getElementById('header');
-  if (header && !document.body.classList.contains('page-inner')) {
-    window.addEventListener('scroll', function () {
-      header.classList.toggle('scrolled', window.scrollY > 50);
+  var isHomeHeader = header && !document.body.classList.contains('page-inner');
+
+  function syncHeaderScrolled() {
+    if (!header || document.body.classList.contains('page-inner')) return;
+    header.classList.toggle('scrolled', window.scrollY > 50);
+  }
+
+  if (isHomeHeader) {
+    syncHeaderScrolled();
+    window.addEventListener('scroll', syncHeaderScrolled, { passive: true });
+    window.addEventListener('pageshow', function (e) {
+      syncHeaderScrolled();
+      if (e.persisted && header && document.activeElement && header.contains(document.activeElement)) {
+        document.activeElement.blur();
+      }
     });
   }
 
