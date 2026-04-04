@@ -233,29 +233,9 @@ const P = {
       <a href="reg-arretes.html">Arrêtés</a>
     </nav>
     <p>Les dahirs fixent le cadre juridique supérieur en matière d’urbanisme et d’aménagement du territoire.</p>
-    <div class="cta-strip">
-      <p>Catalogue consultable sur cette page — demandes de copies ou d’extraits auprès du service juridique.</p>
-      <a class="btn-primary" href="#catalogue-dahirs">Voir le catalogue</a>
-    </div>
-    <h2 id="catalogue-dahirs">Catalogue indicatif — dahirs</h2>
-    <p>Les textes consolidés et pièces officielles peuvent être communiqués sur demande écrite ou au guichet.</p>
-    <div class="doc-grid">
-      <article class="doc-card doc-card-static"><span class="doc-card-title">Dahir n°&nbsp;1-93-51</span><span class="doc-card-meta">Institution des agences urbaines — référence nationale</span></article>
-      <article class="doc-card doc-card-static"><span class="doc-card-title">Textes fonciers et domaniaux</span><span class="doc-card-meta">Extraits sur demande au service juridique</span></article>
-      <a class="doc-card" href="mailto:agencedakhla@gmail.com?subject=Demande%20dahir%20%2F%20extrait"><span class="doc-card-title">Demande de document</span><span class="doc-card-meta">agencedakhla@gmail.com</span></a>
-      <a class="doc-card" href="service-bod.html"><span class="doc-card-title">Bureau d’ordre</span><span class="doc-card-meta">Dépôt d’une demande papier ou numérique</span></a>
-    </div>
     <h2 id="telecharger-pdf">Télécharger — fichiers PDF</h2>
-    <p class="hint">Fichiers hébergés dans <code>assets/reglementation/</code> (voir <code>LISEZ-MOI.txt</code>).</p>
-    <div class="doc-grid">
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/dahir-1-93-51-agences-urbaines.pdf" download="dahir-1-93-51-agences-urbaines.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Dahir n°&nbsp;1-93-51 — agences urbaines</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/dahir-1-11-161.pdf" download="dahir-1-11-161.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Dahir n°&nbsp;1-11-161</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/dahir-1-15-87.pdf" download="dahir-1-15-87.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Dahir n°&nbsp;1-15-87</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/dahir-1-92-7.pdf" download="dahir-1-92-7.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Dahir n°&nbsp;1-92-7</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/dahir-1-60-063.pdf" download="dahir-1-60-063.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Dahir n°&nbsp;1-60-063</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/dahir-1-92-31.pdf" download="dahir-1-92-31.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Dahir n°&nbsp;1-92-31</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/dahir-portant-loi-1-84-150.pdf" download="dahir-portant-loi-1-84-150.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Dahir portant loi n°&nbsp;1-84-150</span><span class="doc-card-meta">Téléchargement</span></a>
-    </div>
+    <p class="hint">Même présentation que les documents d’urbanisme&nbsp;: recherche, cartes avec badge PDF, <strong>Consulter</strong> (ouverture du texte), <strong>Télécharger</strong> (enregistrement) et <strong>Fiche descriptive</strong> (PDF généré par le site). Fichiers dans <code>assets/reglementation/</code>.</p>
+    <div id="reg-catalog-mount" class="reg-catalog-root"></div>
     <h2 id="envoyer-pdf">Téléverser un PDF</h2>
     <p class="hint">Sélectionnez un PDF sur votre ordinateur, puis validez : la messagerie s’ouvre avec un texte prérempli. <strong>Joignez manuellement le fichier</strong> à l’e-mail avant envoi (les pages statiques ne peuvent pas attacher le fichier automatiquement).</p>
     <form class="reg-upload-form service-form" data-reg-type="Dahirs" novalidate>
@@ -280,25 +260,9 @@ const P = {
       <a href="reg-arretes.html">Arrêtés</a>
     </nav>
     <p>Les décrets d’application précisent les modalités d’exécution des textes relatifs à l’urbanisme, à l’habitat et aux autorisations de construire.</p>
-    <div class="cta-strip">
-      <p>Catalogue sur cette page — copies certifiées ou extraits sur demande.</p>
-      <a class="btn-primary" href="#catalogue-decrets">Voir le catalogue</a>
-    </div>
-    <h2 id="catalogue-decrets">Catalogue indicatif — décrets</h2>
-    <div class="doc-grid">
-      <article class="doc-card doc-card-static"><span class="doc-card-title">Décret n°&nbsp;2-03-221</span><span class="doc-card-meta">Création de l’AUDOE — BO n°&nbsp;5214 (2004)</span></article>
-      <article class="doc-card doc-card-static"><span class="doc-card-title">Décrets d’homologation des P.A.</span><span class="doc-card-meta">Liste tenue par le service juridique</span></article>
-      <a class="doc-card" href="mailto:agencedakhla@gmail.com?subject=Demande%20d%C3%A9cret%20%2F%20extrait"><span class="doc-card-title">Demande de document</span><span class="doc-card-meta">agencedakhla@gmail.com</span></a>
-      <a class="doc-card" href="service-bod.html"><span class="doc-card-title">Bureau d’ordre</span><span class="doc-card-meta">Dépôt d’une demande</span></a>
-    </div>
     <h2 id="telecharger-pdf">Télécharger — fichiers PDF</h2>
-    <p class="hint">Fichiers dans <code>assets/reglementation/</code>.</p>
-    <div class="doc-grid">
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/decret-2-03-221-creation-audoe.pdf" download="decret-2-03-221-creation-audoe.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Décret n°&nbsp;2-03-221 — création AUDOE</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/decret-2-13-874.pdf" download="decret-2-13-874.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Décret n°&nbsp;2-13-874</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/decret-2-17-634.pdf" download="decret-2-17-634.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Décret n°&nbsp;2-17-634</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/decret-2-18-577.pdf" download="decret-2-18-577.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Décret n°&nbsp;2-18-577</span><span class="doc-card-meta">Téléchargement</span></a>
-    </div>
+    <p class="hint">Recherche et cartes (comme la rubrique documents d’urbanisme). Fichiers dans <code>assets/reglementation/</code>.</p>
+    <div id="reg-catalog-mount" class="reg-catalog-root"></div>
     <h2 id="envoyer-pdf">Téléverser un PDF</h2>
     <p class="hint">Sélectionnez un PDF, puis joignez-le manuellement dans l’e-mail qui s’ouvre.</p>
     <form class="reg-upload-form service-form" data-reg-type="Décrets" novalidate>
@@ -323,31 +287,9 @@ const P = {
       <a href="reg-arretes.html">Arrêtés</a>
     </nav>
     <p>Les circulaires ministérielles orientent l’application des textes par les agences urbaines et les services de l’État.</p>
-    <div class="cta-strip">
-      <p>Référentiel consultable ici — transmission de circulaires sur demande.</p>
-      <a class="btn-primary" href="#catalogue-circulaires">Voir le catalogue</a>
-    </div>
-    <h2 id="catalogue-circulaires">Catalogue indicatif — circulaires</h2>
-    <div class="doc-grid">
-      <article class="doc-card doc-card-static"><span class="doc-card-title">Circulaires ministérielles</span><span class="doc-card-meta">PDF disponibles ci-dessous</span></article>
-      <a class="doc-card" href="mailto:agencedakhla@gmail.com?subject=Demande%20circulaire"><span class="doc-card-title">Demande de document</span><span class="doc-card-meta">agencedakhla@gmail.com</span></a>
-      <a class="doc-card" href="service-bod.html"><span class="doc-card-title">Bureau d’ordre</span><span class="doc-card-meta">Dépôt d’une demande</span></a>
-    </div>
     <h2 id="telecharger-pdf">Télécharger — fichiers PDF</h2>
-    <p class="hint">Fichiers dans <code>assets/reglementation/</code>.</p>
-    <div class="doc-grid">
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/circulaire-005.pdf" download="circulaire-005.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Circulaire n°&nbsp;005</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/circulaire-10098.pdf" download="circulaire-10098.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Circulaire n°&nbsp;10098</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/circulaire-12-96.pdf" download="circulaire-12-96.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Circulaire n°&nbsp;12-96</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/circulaire-14-2000.pdf" download="circulaire-14-2000.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Circulaire n°&nbsp;14-2000</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/circulaire-1500-2000.pdf" download="circulaire-1500-2000.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Circulaire n°&nbsp;1500-2000</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/circulaire-222.pdf" download="circulaire-222.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Circulaire n°&nbsp;222</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/circulaire-254.pdf" download="circulaire-254.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Circulaire n°&nbsp;254</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/circulaire-399.pdf" download="circulaire-399.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Circulaire n°&nbsp;399</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/circulaire-4210-2842.pdf" download="circulaire-4210-2842.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Circulaire n°&nbsp;4210-2842</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/circulaire-65.pdf" download="circulaire-65.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Circulaire n°&nbsp;65</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/circulaire-derogation.pdf" download="circulaire-derogation.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Circulaire — dérogation</span><span class="doc-card-meta">Téléchargement</span></a>
-    </div>
+    <p class="hint">Recherche et cartes (comme la rubrique documents d’urbanisme). Filtre «&nbsp;Dérogation&nbsp;» pour la circulaire concernée. Fichiers dans <code>assets/reglementation/</code>.</p>
+    <div id="reg-catalog-mount" class="reg-catalog-root"></div>
     <h2 id="envoyer-pdf">Téléverser un PDF</h2>
     <p class="hint">Envoi via votre messagerie — pensez à joindre le fichier PDF.</p>
     <form class="reg-upload-form service-form" data-reg-type="Circulaires" novalidate>
@@ -372,22 +314,9 @@ const P = {
       <a href="reg-arretes.html" class="is-current">Arrêtés</a>
     </nav>
     <p>Les arrêtés précisent les mesures applicables dans le cadre des compétences de l’Agence sur le ressort territorial.</p>
-    <div class="cta-strip">
-      <p>Liste indicative — arrêtés nominatifs communiqués sur demande.</p>
-      <a class="btn-primary" href="#catalogue-arretes">Voir le catalogue</a>
-    </div>
-    <h2 id="catalogue-arretes">Catalogue indicatif — arrêtés</h2>
-    <div class="doc-grid">
-      <article class="doc-card doc-card-static"><span class="doc-card-title">Arrêtés d’urbanisme locaux</span><span class="doc-card-meta">Conservation au service de la réglementation</span></article>
-      <article class="doc-card doc-card-static"><span class="doc-card-title">Arrêtés de servitude / prescriptions</span><span class="doc-card-meta">Consultation sur place ou copie sur demande</span></article>
-      <a class="doc-card" href="mailto:agencedakhla@gmail.com?subject=Demande%20arr%C3%AAt%C3%A9"><span class="doc-card-title">Demande de document</span><span class="doc-card-meta">agencedakhla@gmail.com</span></a>
-      <a class="doc-card" href="service-bod.html"><span class="doc-card-title">Bureau d’ordre</span><span class="doc-card-meta">Dépôt d’une demande</span></a>
-    </div>
     <h2 id="telecharger-pdf">Télécharger — fichiers PDF</h2>
-    <p class="hint">Fichiers dans <code>assets/reglementation/</code>.</p>
-    <div class="doc-grid">
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/arrete-338-20.pdf" download="arrete-338-20.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Arrêté n°&nbsp;338-20</span><span class="doc-card-meta">Téléchargement</span></a>
-    </div>
+    <p class="hint">Recherche et cartes (comme la rubrique documents d’urbanisme). Fichiers dans <code>assets/reglementation/</code>.</p>
+    <div id="reg-catalog-mount" class="reg-catalog-root"></div>
     <h2 id="envoyer-pdf">Téléverser un PDF</h2>
     <p class="hint">Transmettre un arrêté ou une pièce (PDF) : ouverture de la messagerie — joindre le fichier manuellement.</p>
     <form class="reg-upload-form service-form" data-reg-type="Arrêtés" novalidate>
@@ -558,6 +487,15 @@ for (const [fn, patch] of Object.entries(AUD_PAGE_UPDATES)) {
   if (P[fn]) Object.assign(P[fn], patch);
 }
 
+const REG_CATALOG_SCRIPT = 'assets/js/reglementation-catalog.js';
+const REG_FICHE_MODULE = 'assets/js/reglementation-fiche.mjs';
+for (const fn of ['reg-dahirs.html', 'reg-decrets.html', 'reg-circulaires.html', 'reg-arretes.html']) {
+  if (P[fn]) {
+    P[fn].extraScripts = [REG_CATALOG_SCRIPT];
+    P[fn].extraModuleScripts = [REG_FICHE_MODULE];
+  }
+}
+
 function navHtml(assetPrefix) {
   const h = assetPrefix + 'index.html';
   const p = (f) => (assetPrefix === '../' ? '' : 'pages/') + f;
@@ -725,6 +663,8 @@ function breadcrumbHtml(items) {
 function renderPage(filename, data, assetPrefix) {
   const mainClass = data.wide ? 'page-main section' : 'page-main section section-alt';
   const containerClass = data.wide ? 'container content-prose' : 'container narrow content-prose';
+  const bodyClass =
+    'page-inner' + (/^reg-/.test(filename) ? ' page-reglementation' : '');
   return `<!DOCTYPE html>
 <html lang="fr" dir="ltr">
 <head>
@@ -736,7 +676,7 @@ function renderPage(filename, data, assetPrefix) {
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="${assetPrefix}assets/css/styles.css"/>
 </head>
-<body class="page-inner">
+<body class="${bodyClass}">
 ${navHtml(assetPrefix)}
 ${mobileHtml(assetPrefix)}
 <section class="page-hero">
@@ -757,6 +697,7 @@ ${footerHtml(assetPrefix)}
 <script src="${assetPrefix}assets/js/main.js"></script>
 <script src="${assetPrefix}assets/js/forms-local.js"></script>
 ${(data.extraScripts || []).map((s) => `<script src="${assetPrefix}${s}"></script>`).join('\n')}
+${(data.extraModuleScripts || []).map((s) => `<script type="module" src="${assetPrefix}${s}"></script>`).join('\n')}
 </body>
 </html>`;
 }

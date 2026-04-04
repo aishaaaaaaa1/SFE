@@ -545,6 +545,8 @@ body.page-inner .burger span{background:var(--navy)}
 }
 .page-main{padding:56px 32px 90px}
 .page-main .container.narrow{max-width:760px}
+/* Réglementation : colonne un peu plus large pour le catalogue PDF (cartes + recherche) */
+.page-reglementation .page-main .container.narrow{max-width:980px}
 .content-prose{font-size:16px;line-height:1.85;color:var(--navy)}
 .content-prose p{margin-bottom:1.1em}
 .content-prose h2{font-family:'Playfair Display',serif;font-size:22px;margin:1.6em 0 .6em;color:var(--navy)}
@@ -697,6 +699,32 @@ button.btn-primary{cursor:pointer;border:none;font-family:inherit}
 .doc-catalog-sep{color:var(--border);font-weight:300;user-select:none}
 .doc-catalog-dl{display:inline-flex;align-items:center;gap:6px}
 .doc-catalog-dl-ic{width:16px;height:16px;flex-shrink:0}
+.doc-catalog-dl-progress{font-size:13px;color:var(--blue);font-weight:500}
+
+.doc-card-pdf-stack{
+  display:flex;flex-direction:column;gap:10px;padding:16px 18px;background:#fff;
+  border:1px solid var(--border);border-radius:14px;text-align:left;
+  transition:box-shadow .2s,border-color .2s;
+}
+.doc-card-pdf-stack:hover{box-shadow:var(--shadow);border-color:rgba(21,101,192,.25)}
+.doc-card-pdf-stack > a.doc-card{
+  border:none;padding:0;border-radius:0;margin:0;
+  box-shadow:none!important;
+}
+.doc-card-pdf-stack > a.doc-card:hover{box-shadow:none!important;border-color:transparent}
+.reg-fiche-btn{
+  display:block;width:100%;margin:0;padding:10px 12px;font:inherit;font-size:13px;font-weight:600;
+  color:var(--navy);background:var(--off);border:1px dashed var(--border);border-radius:10px;
+  cursor:pointer;transition:background .2s,border-color .2s;
+}
+.reg-fiche-btn:hover:not(:disabled){
+  background:rgba(21,101,192,.06);border-color:rgba(21,101,192,.35);
+}
+.reg-fiche-btn:disabled{opacity:.65;cursor:wait}
+.reg-fiche-btn--catalog{
+  width:100%;margin-top:14px;text-align:center;
+}
+.reg-doc-catalog .doc-catalog-field--type select{padding-left:14px}
 .doc-catalog-empty{text-align:center;padding:28px;color:var(--gray);font-size:15px}
 .doc-catalog-hint{margin-top:18px!important}
 @media(max-width:768px){

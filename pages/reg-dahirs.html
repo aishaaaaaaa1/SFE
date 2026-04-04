@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="../assets/css/styles.css"/>
 </head>
-<body class="page-inner">
+<body class="page-inner page-reglementation">
 <header id="header">
   <div class="header-inner">
     <a href="../index.html" class="logo">
@@ -98,29 +98,9 @@
       <a href="reg-arretes.html">Arrêtés</a>
     </nav>
     <p>Les dahirs fixent le cadre juridique supérieur en matière d’urbanisme et d’aménagement du territoire.</p>
-    <div class="cta-strip">
-      <p>Catalogue consultable sur cette page — demandes de copies ou d’extraits auprès du service juridique.</p>
-      <a class="btn-primary" href="#catalogue-dahirs">Voir le catalogue</a>
-    </div>
-    <h2 id="catalogue-dahirs">Catalogue indicatif — dahirs</h2>
-    <p>Les textes consolidés et pièces officielles peuvent être communiqués sur demande écrite ou au guichet.</p>
-    <div class="doc-grid">
-      <article class="doc-card doc-card-static"><span class="doc-card-title">Dahir n°&nbsp;1-93-51</span><span class="doc-card-meta">Institution des agences urbaines — référence nationale</span></article>
-      <article class="doc-card doc-card-static"><span class="doc-card-title">Textes fonciers et domaniaux</span><span class="doc-card-meta">Extraits sur demande au service juridique</span></article>
-      <a class="doc-card" href="mailto:agencedakhla@gmail.com?subject=Demande%20dahir%20%2F%20extrait"><span class="doc-card-title">Demande de document</span><span class="doc-card-meta">agencedakhla@gmail.com</span></a>
-      <a class="doc-card" href="service-bod.html"><span class="doc-card-title">Bureau d’ordre</span><span class="doc-card-meta">Dépôt d’une demande papier ou numérique</span></a>
-    </div>
     <h2 id="telecharger-pdf">Télécharger — fichiers PDF</h2>
-    <p class="hint">Fichiers hébergés dans <code>assets/reglementation/</code> (voir <code>LISEZ-MOI.txt</code>).</p>
-    <div class="doc-grid">
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/dahir-1-93-51-agences-urbaines.pdf" download="dahir-1-93-51-agences-urbaines.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Dahir n°&nbsp;1-93-51 — agences urbaines</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/dahir-1-11-161.pdf" download="dahir-1-11-161.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Dahir n°&nbsp;1-11-161</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/dahir-1-15-87.pdf" download="dahir-1-15-87.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Dahir n°&nbsp;1-15-87</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/dahir-1-92-7.pdf" download="dahir-1-92-7.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Dahir n°&nbsp;1-92-7</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/dahir-1-60-063.pdf" download="dahir-1-60-063.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Dahir n°&nbsp;1-60-063</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/dahir-1-92-31.pdf" download="dahir-1-92-31.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Dahir n°&nbsp;1-92-31</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/dahir-portant-loi-1-84-150.pdf" download="dahir-portant-loi-1-84-150.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Dahir portant loi n°&nbsp;1-84-150</span><span class="doc-card-meta">Téléchargement</span></a>
-    </div>
+    <p class="hint">Même présentation que les documents d’urbanisme&nbsp;: recherche, cartes avec badge PDF, <strong>Consulter</strong> (ouverture du texte), <strong>Télécharger</strong> (enregistrement) et <strong>Fiche descriptive</strong> (PDF généré par le site). Fichiers dans <code>assets/reglementation/</code>.</p>
+    <div id="reg-catalog-mount" class="reg-catalog-root"></div>
     <h2 id="envoyer-pdf">Téléverser un PDF</h2>
     <p class="hint">Sélectionnez un PDF sur votre ordinateur, puis validez : la messagerie s’ouvre avec un texte prérempli. <strong>Joignez manuellement le fichier</strong> à l’e-mail avant envoi (les pages statiques ne peuvent pas attacher le fichier automatiquement).</p>
     <form class="reg-upload-form service-form" data-reg-type="Dahirs" novalidate>
@@ -203,6 +183,7 @@
 </footer>
 <script src="../assets/js/main.js"></script>
 <script src="../assets/js/forms-local.js"></script>
-
+<script src="../assets/js/reglementation-catalog.js"></script>
+<script type="module" src="../assets/js/reglementation-fiche.mjs"></script>
 </body>
 </html>

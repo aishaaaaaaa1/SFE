@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="../assets/css/styles.css"/>
 </head>
-<body class="page-inner">
+<body class="page-inner page-reglementation">
 <header id="header">
   <div class="header-inner">
     <a href="../index.html" class="logo">
@@ -98,22 +98,9 @@
       <a href="reg-arretes.html" class="is-current">Arrêtés</a>
     </nav>
     <p>Les arrêtés précisent les mesures applicables dans le cadre des compétences de l’Agence sur le ressort territorial.</p>
-    <div class="cta-strip">
-      <p>Liste indicative — arrêtés nominatifs communiqués sur demande.</p>
-      <a class="btn-primary" href="#catalogue-arretes">Voir le catalogue</a>
-    </div>
-    <h2 id="catalogue-arretes">Catalogue indicatif — arrêtés</h2>
-    <div class="doc-grid">
-      <article class="doc-card doc-card-static"><span class="doc-card-title">Arrêtés d’urbanisme locaux</span><span class="doc-card-meta">Conservation au service de la réglementation</span></article>
-      <article class="doc-card doc-card-static"><span class="doc-card-title">Arrêtés de servitude / prescriptions</span><span class="doc-card-meta">Consultation sur place ou copie sur demande</span></article>
-      <a class="doc-card" href="mailto:agencedakhla@gmail.com?subject=Demande%20arr%C3%AAt%C3%A9"><span class="doc-card-title">Demande de document</span><span class="doc-card-meta">agencedakhla@gmail.com</span></a>
-      <a class="doc-card" href="service-bod.html"><span class="doc-card-title">Bureau d’ordre</span><span class="doc-card-meta">Dépôt d’une demande</span></a>
-    </div>
     <h2 id="telecharger-pdf">Télécharger — fichiers PDF</h2>
-    <p class="hint">Fichiers dans <code>assets/reglementation/</code>.</p>
-    <div class="doc-grid">
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/arrete-338-20.pdf" download="arrete-338-20.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Arrêté n°&nbsp;338-20</span><span class="doc-card-meta">Téléchargement</span></a>
-    </div>
+    <p class="hint">Recherche et cartes (comme la rubrique documents d’urbanisme). Fichiers dans <code>assets/reglementation/</code>.</p>
+    <div id="reg-catalog-mount" class="reg-catalog-root"></div>
     <h2 id="envoyer-pdf">Téléverser un PDF</h2>
     <p class="hint">Transmettre un arrêté ou une pièce (PDF) : ouverture de la messagerie — joindre le fichier manuellement.</p>
     <form class="reg-upload-form service-form" data-reg-type="Arrêtés" novalidate>
@@ -196,6 +183,7 @@
 </footer>
 <script src="../assets/js/main.js"></script>
 <script src="../assets/js/forms-local.js"></script>
-
+<script src="../assets/js/reglementation-catalog.js"></script>
+<script type="module" src="../assets/js/reglementation-fiche.mjs"></script>
 </body>
 </html>

@@ -9,7 +9,7 @@
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
 <link rel="stylesheet" href="../assets/css/styles.css"/>
 </head>
-<body class="page-inner">
+<body class="page-inner page-reglementation">
 <header id="header">
   <div class="header-inner">
     <a href="../index.html" class="logo">
@@ -98,25 +98,9 @@
       <a href="reg-arretes.html">Arrêtés</a>
     </nav>
     <p>Les décrets d’application précisent les modalités d’exécution des textes relatifs à l’urbanisme, à l’habitat et aux autorisations de construire.</p>
-    <div class="cta-strip">
-      <p>Catalogue sur cette page — copies certifiées ou extraits sur demande.</p>
-      <a class="btn-primary" href="#catalogue-decrets">Voir le catalogue</a>
-    </div>
-    <h2 id="catalogue-decrets">Catalogue indicatif — décrets</h2>
-    <div class="doc-grid">
-      <article class="doc-card doc-card-static"><span class="doc-card-title">Décret n°&nbsp;2-03-221</span><span class="doc-card-meta">Création de l’AUDOE — BO n°&nbsp;5214 (2004)</span></article>
-      <article class="doc-card doc-card-static"><span class="doc-card-title">Décrets d’homologation des P.A.</span><span class="doc-card-meta">Liste tenue par le service juridique</span></article>
-      <a class="doc-card" href="mailto:agencedakhla@gmail.com?subject=Demande%20d%C3%A9cret%20%2F%20extrait"><span class="doc-card-title">Demande de document</span><span class="doc-card-meta">agencedakhla@gmail.com</span></a>
-      <a class="doc-card" href="service-bod.html"><span class="doc-card-title">Bureau d’ordre</span><span class="doc-card-meta">Dépôt d’une demande</span></a>
-    </div>
     <h2 id="telecharger-pdf">Télécharger — fichiers PDF</h2>
-    <p class="hint">Fichiers dans <code>assets/reglementation/</code>.</p>
-    <div class="doc-grid">
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/decret-2-03-221-creation-audoe.pdf" download="decret-2-03-221-creation-audoe.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Décret n°&nbsp;2-03-221 — création AUDOE</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/decret-2-13-874.pdf" download="decret-2-13-874.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Décret n°&nbsp;2-13-874</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/decret-2-17-634.pdf" download="decret-2-17-634.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Décret n°&nbsp;2-17-634</span><span class="doc-card-meta">Téléchargement</span></a>
-      <a class="doc-card doc-card-pdf" href="../assets/reglementation/decret-2-18-577.pdf" download="decret-2-18-577.pdf"><span class="doc-card-badge">PDF</span><span class="doc-card-title">Décret n°&nbsp;2-18-577</span><span class="doc-card-meta">Téléchargement</span></a>
-    </div>
+    <p class="hint">Recherche et cartes (comme la rubrique documents d’urbanisme). Fichiers dans <code>assets/reglementation/</code>.</p>
+    <div id="reg-catalog-mount" class="reg-catalog-root"></div>
     <h2 id="envoyer-pdf">Téléverser un PDF</h2>
     <p class="hint">Sélectionnez un PDF, puis joignez-le manuellement dans l’e-mail qui s’ouvre.</p>
     <form class="reg-upload-form service-form" data-reg-type="Décrets" novalidate>
@@ -199,6 +183,7 @@
 </footer>
 <script src="../assets/js/main.js"></script>
 <script src="../assets/js/forms-local.js"></script>
-
+<script src="../assets/js/reglementation-catalog.js"></script>
+<script type="module" src="../assets/js/reglementation-fiche.mjs"></script>
 </body>
 </html>
