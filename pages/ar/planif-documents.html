@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>النسخة العربية · Documents d’urbanisme · AUDOE</title>
+<title>النسخة العربية · وثائق التعمير · AUDOE</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -68,6 +68,7 @@
     <div class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
   </div>
 </header>
+
 <div class="mobile-menu" id="mobileMenu">
   <button type="button" class="mobile-close" onclick="toggleMenu()">✕</button>
   <a href="index.html">الرئيسية</a>
@@ -79,6 +80,7 @@
   <a href="contact.html">اتصل بنا</a>
   <a href="../index.html" style="color:var(--gold-light);font-weight:600">النسخة الفرنسية ←</a>
 </div>
+
 <section class="page-hero">
   <div class="hero-bg"></div>
   <div class="hero-pattern"></div>
@@ -88,39 +90,50 @@
     <h1 class="page-title">وثائق التعمير</h1>
   </div>
 </section>
+
 <main class="page-main section">
   <div class="container content-prose">
     <section class="doc-catalog" aria-labelledby="doc-catalog-heading">
-<h2 id="doc-catalog-heading" class="doc-catalog-heading">Documents d’urbanisme — recherche</h2>
-<p class="doc-catalog-intro">Filtrez par commune ou par type de document. Le bouton <strong>تحميل</strong> génère une fiche PDF (texte et illustrations) pour chaque entrée.</p>
-<div class="doc-catalog-bar">
-  <div class="doc-catalog-field">
-    <label for="doc-catalog-search">Rechercher une commune</label>
-    <div class="doc-catalog-input-wrap">
-      <svg class="doc-catalog-search-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
-      <input type="search" id="doc-catalog-search" placeholder="Ex : Dakhla, El Argoub, Bir Anzarane…" autocomplete="off" />
+      <h2 id="doc-catalog-heading" class="doc-catalog-heading">البحث في وثائق التعمير</h2>
+      <p class="doc-catalog-intro">يمكنكم تصفية النتائج حسب الجماعة أو نوع الوثيقة. زر <strong>تحميل</strong> يتيح استخراج بطاقة تقنية بصيغة PDF لكل وثيقة.</p>
+      
+      <div class="doc-catalog-bar">
+        <div class="doc-catalog-field">
+          <label for="doc-catalog-search">البحث عن جماعة</label>
+          <div class="doc-catalog-input-wrap">
+            <svg class="doc-catalog-search-ic" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true"><circle cx="11" cy="11" r="8"/><path d="M21 21l-4.35-4.35"/></svg>
+            <input type="search" id="doc-catalog-search" placeholder="مثال: الداخلة، العركوب، بئر انزران..." autocomplete="off" />
+          </div>
+        </div>
+        
+        <div class="doc-catalog-field doc-catalog-field--type">
+          <label for="doc-catalog-type">نوع الوثيقة</label>
+          <select id="doc-catalog-type">
+            <option value="all">الكل</option>
+            <option value="sdau">المخطط التوجيهي للتهيئة العمرانية (SDAU)</option>
+            <option value="pa">تصميم التهيئة (PA)</option>
+            <option value="pdar">تصميم تنمية التكتلات القروية (PDAR)</option>
+            <option value="autre">أخرى</option>
+          </select>
+        </div>
+        
+        <button type="button" class="btn-primary doc-catalog-btn" id="doc-catalog-submit">بحث</button>
+      </div>
+
+      <p class="doc-catalog-count" id="doc-catalog-count" aria-live="polite"></p>
+      <div class="doc-catalog-grid" id="doc-catalog-grid"></div>
+      <p class="doc-catalog-empty" id="doc-catalog-empty" hidden>عذراً، لا توجد نتائج تطابق بحثكم.</p>
+      
+      <p class="hint doc-catalog-hint">رابط "تحميل" يقوم بإنشاء <strong>بطاقة PDF</strong> تلخص المعطيات. بالنسبة للوثائق الرسمية الكاملة، يرجى ملء حقل <code>pdf</code> في ملف البرمجة الخاص بالمستودع.</p>
+    </section>
+
+    <div class="cta-strip">
+      <p>تصفح الخرائط والوثائق مباشرة عبر الإنترنت</p>
+      <a class="btn-primary" href="service-taamir.html">بوابة "تعمير" (Karazal)</a>
     </div>
   </div>
-  <div class="doc-catalog-field doc-catalog-field--type">
-    <label for="doc-catalog-type">Type de document</label>
-    <select id="doc-catalog-type">
-      <option value="all">Tous</option>
-      <option value="sdau">Schéma directeur (SDAU)</option>
-      <option value="pa">Plan d’aménagement</option>
-      <option value="pdar">P.D.A.R / plan de développement</option>
-      <option value="autre">Autre</option>
-    </select>
-  </div>
-  <button type="button" class="btn-primary doc-catalog-btn" id="doc-catalog-submit">Rechercher</button>
-</div>
-<p class="doc-catalog-count" id="doc-catalog-count" aria-live="polite"></p>
-<div class="doc-catalog-grid" id="doc-catalog-grid"></div>
-<p class="doc-catalog-empty" id="doc-catalog-empty" hidden>Aucun document ne correspond à votre recherche.</p>
-<p class="hint doc-catalog-hint">Le lien «&nbsp;Télécharger&nbsp;» génère une <strong>fiche PDF</strong> (résumé et illustrations issues de cette page). Pour joindre un PDF officiel complet, renseignez le champ <code>pdf</code> dans <code>assets/js/docs-urbanisme-catalog.js</code> (fichiers dans <code>assets/docs-urbanisme/</code>)&nbsp;; le lien pointera alors directement vers ce fichier.</p>
-</section>
-<div class="cta-strip"><p>Consulter la cartographie et les documents en ligne</p><a class="btn-primary" href="service-taamir.html">Portail Taamir (Karazal)</a></div>
-  </div>
 </main>
+
 <footer id="footer">
   <div class="footer-grid" dir="rtl">
     <div class="footer-brand">
@@ -171,13 +184,6 @@
         <div class="contact-item">
           <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           <a href="mailto:agencedakhla@gmail.com" style="color:inherit;text-decoration:underline">agencedakhla@gmail.com</a>
-        </div>
-      </div>
-      <div style="margin-top:20px">
-        <p style="font-size:12px;color:rgba(255,255,255,.4);margin-bottom:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase">النشرة الإخبارية</p>
-        <div class="newsletter-form">
-          <input type="email" placeholder="بريدك الإلكتروني" />
-          <button type="button">اشتراك</button>
         </div>
       </div>
     </div>

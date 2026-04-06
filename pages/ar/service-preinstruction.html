@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>النسخة العربية · Pré-instruction en ligne · AUDOE</title>
+<title>النسخة العربية · الدراسة القبلية الإلكترونية · AUDOE</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -68,6 +68,7 @@
     <div class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
   </div>
 </header>
+
 <div class="mobile-menu" id="mobileMenu">
   <button type="button" class="mobile-close" onclick="toggleMenu()">✕</button>
   <a href="index.html">الرئيسية</a>
@@ -79,6 +80,7 @@
   <a href="contact.html">اتصل بنا</a>
   <a href="../index.html" style="color:var(--gold-light);font-weight:600">النسخة الفرنسية ←</a>
 </div>
+
 <section class="page-hero">
   <div class="hero-bg"></div>
   <div class="hero-pattern"></div>
@@ -88,29 +90,56 @@
     <h1 class="page-title">الدراسة القبلية الإلكترونية</h1>
   </div>
 </section>
+
 <main class="page-main section section-alt">
   <div class="container narrow content-prose">
-    <p>Déposez ici les informations relatives à votre projet pour une <strong>pré-instruction</strong> : elles sont traitées localement dans votre navigateur ; vous pourrez ensuite ouvrir un brouillon d’e-mail vers l’AUDOE ou imprimer le récapitulatif pour le <a href="service-bod.html">مكتب الضبط</a>. Les fichiers volumineux ne peuvent pas être joints via le client mail : déposez-les en physique ou via la plateforme Courrier.gouv depuis <a href="service-bod.html">مكتب الضبط digital</a>.</p>
-<p>Conformément à la loi n°&nbsp;09-08, vous disposez d’un droit d’accès, de rectification et d’opposition en écrivant à <a href="mailto:agencedakhla@gmail.com">agencedakhla@gmail.com</a>.</p>
-<form id="form-preinstruction" class="service-form" novalidate>
-<div class="field"><label for="pre-nom">الاسم الكامل <span class="req">*</span></label><input id="pre-nom" name="nom" type="text" autocomplete="name" required /></div>
-<div class="field"><label for="pre-email">البريد الإلكتروني <span class="req">*</span></label><input id="pre-email" name="email" type="email" autocomplete="email" required /></div>
-<div class="field"><label for="pre-objet">الموضوع</label><input id="pre-objet" name="objet" type="text" /></div>
-<div class="field"><label for="pre-desc">وصف المشروع / الطلب <span class="req">*</span></label><textarea id="pre-desc" name="description" rows="6" required></textarea></div>
-<div class="field"><label for="pre-pieces">الوثائق المتوقعة (liste libre, ex.&nbsp;: plan, titre foncier…)</label><input id="pre-pieces" name="pieces" type="text" /></div>
-<div class="field field-inline"><label for="pre-captcha">التحقق الأمني : combien font 7&nbsp;+&nbsp;2&nbsp;? <span class="req">*</span></label><input id="pre-captcha" name="captcha" type="text" inputmode="numeric" autocomplete="off" required /></div>
-<div class="field field-check"><label><input id="pre-accept" type="checkbox" required /> لقد قرأت وأوافق على شروط معالجة بياناتي الشخصية.</label></div>
-<button type="submit" class="btn-primary">تأكيد وإعداد الإرسال</button>
-</form>
-<div id="preinstruction-success" class="form-success" hidden>
-<h2>الطلب جاهز</h2>
-<p>Résumé : <span class="js-pre-summary"></span></p>
-<p>اختر خيارا :</p>
-<p><a class="btn-primary js-mailto-pre" href="#">فتح البريد بنص مُعد مسبقا</a></p>
-<p><a class="btn-secondary" href="service-bod.html">Vers le مكتب الضبط</a> · <a class="btn-secondary" href="gestion-procedures.html">مساطر الترخيص</a></p>
-</div>
+    <p>قم بإيداع المعلومات المتعلقة بمشروعك هنا للحصول على <strong>دراسة قبلية</strong>: يتم معالجة البيانات محلياً في متصفحك؛ يمكنك بعد ذلك فتح مسودة بريد إلكتروني موجهة إلى الوكالة الحضرية أو طباعة الملخص وتقديمه لدى <a href="service-bod.html">مكتب الضبط</a>. يرجى ملاحظة أنه لا يمكن إرفاق الملفات الكبيرة عبر البريد الإلكتروني: يجب إيداعها حضورياً أو عبر منصة "Courrier.gouv" من خلال <a href="service-bod.html">مكتب الضبط الرقمي</a>.</p>
+    <p>وفقاً للقانون رقم 08-09، لديكم الحق في الولوج إلى بياناتكم الشخصية وتصحيحها أو التعرض عليها عبر مراسلتنا على: <a href="mailto:agencedakhla@gmail.com">agencedakhla@gmail.com</a>.</p>
+
+    <form id="form-preinstruction" class="service-form" novalidate>
+      <div class="field">
+        <label for="pre-nom">الاسم الكامل <span class="req">*</span></label>
+        <input id="pre-nom" name="nom" type="text" autocomplete="name" required />
+      </div>
+      <div class="field">
+        <label for="pre-email">البريد الإلكتروني <span class="req">*</span></label>
+        <input id="pre-email" name="email" type="email" autocomplete="email" required />
+      </div>
+      <div class="field">
+        <label for="pre-objet">الموضوع</label>
+        <input id="pre-objet" name="objet" type="text" />
+      </div>
+      <div class="field">
+        <label for="pre-desc">وصف المشروع / الطلب <span class="req">*</span></label>
+        <textarea id="pre-desc" name="description" rows="6" required></textarea>
+      </div>
+      <div class="field">
+        <label for="pre-pieces">الوثائق المرفقة (قائمة حرة، مثال: تصميم، شهادة الملكية...)</label>
+        <input id="pre-pieces" name="pieces" type="text" />
+      </div>
+      <div class="field field-inline">
+        <label for="pre-captcha">التحقق الأمني: كم يساوي 7 + 2 ؟ <span class="req">*</span></label>
+        <input id="pre-captcha" name="captcha" type="text" inputmode="numeric" autocomplete="off" required />
+      </div>
+      <div class="field field-check">
+        <label><input id="pre-accept" type="checkbox" required /> لقد قرأت وأوافق على شروط معالجة بياناتي الشخصية.</label>
+      </div>
+      <button type="submit" class="btn-primary">تأكيد وإعداد الإرسال</button>
+    </form>
+
+    <div id="preinstruction-success" class="form-success" hidden>
+      <h2>الطلب جاهز</h2>
+      <p>الملخص: <span class="js-pre-summary"></span></p>
+      <p>اختر إجراءً:</p>
+      <p><a class="btn-primary js-mailto-pre" href="#">فتح البريد بنص مُعد مسبقاً</a></p>
+      <p>
+        <a class="btn-secondary" href="service-bod.html">الانتقال إلى مكتب الضبط</a> · 
+        <a class="btn-secondary" href="gestion-procedures.html">مساطر الترخيص</a>
+      </p>
+    </div>
   </div>
 </main>
+
 <footer id="footer">
   <div class="footer-grid" dir="rtl">
     <div class="footer-brand">
@@ -184,7 +213,5 @@
 <script src="../../assets/js/main.js"></script>
 <script src="../../assets/js/forms-local.js"></script>
 <script src="../../assets/js/arabic-link-localizer.js"></script>
-
-
 </body>
 </html>

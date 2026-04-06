@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8"/>
 <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-<title>النسخة العربية · Arrêtés · AUDOE</title>
+<title>النسخة العربية · القرارات · AUDOE</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"/>
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
 <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
@@ -68,6 +68,7 @@
     <div class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
   </div>
 </header>
+
 <div class="mobile-menu" id="mobileMenu">
   <button type="button" class="mobile-close" onclick="toggleMenu()">✕</button>
   <a href="index.html">الرئيسية</a>
@@ -79,36 +80,53 @@
   <a href="contact.html">اتصل بنا</a>
   <a href="../index.html" style="color:var(--gold-light);font-weight:600">النسخة الفرنسية ←</a>
 </div>
+
 <section class="page-hero">
   <div class="hero-bg"></div>
   <div class="hero-pattern"></div>
   <div class="container page-hero-inner">
-    <nav class="breadcrumb" aria-label="مسار التصفح"><a href="index.html">الرئيسية</a><span class="sep">/</span><span>النصوص التنظيمية</span><span class="sep">/</span><span>القرارات</span></nav>
+    <nav class="breadcrumb" aria-label="مسار التصفح">
+      <a href="index.html">الرئيسية</a><span class="sep">/</span>
+      <span>النصوص التنظيمية</span><span class="sep">/</span>
+      <span>القرارات</span>
+    </nav>
     <div class="section-tag">النصوص التنظيمية</div>
     <h1 class="page-title">القرارات</h1>
   </div>
 </section>
+
 <main class="page-main section section-alt">
   <div class="container narrow content-prose">
-    <nav class="reg-tabs" aria-label="Réglementation">
-      <a href="reg-dahirs.html">Dahirs</a>
-      <a href="reg-decrets.html">Décrets</a>
-      <a href="reg-circulaires.html">Circulaires</a>
-      <a href="reg-arretes.html" class="is-current">Arrêtés</a>
+    <nav class="reg-tabs" aria-label="النصوص التنظيمية">
+      <a href="reg-dahirs.html">الظهائر</a>
+      <a href="reg-decrets.html">المراسيم</a>
+      <a href="reg-circulaires.html">الدوريات</a>
+      <a href="reg-arretes.html" class="is-current">القرارات</a>
     </nav>
-    <p>Les arrêtés précisent les mesures applicables dans le cadre des compétences de l’Agence sur le ressort territorial.</p>
-    <h2 id="telecharger-pdf">Télécharger — fichiers PDF</h2>
-    <p class="hint">Recherche et cartes (comme la rubrique documents d’urbanisme). Fichiers dans <code>assets/reglementation/</code>.</p>
+    <p>تحدد هذه القرارات الإجراءات المعمول بها في إطار اختصاصات الوكالة على نفوذها الترابي.</p>
+    
+    <h2 id="telecharger-pdf">تحميل الملفات بصيغة PDF</h2>
+    <p class="hint">البحث والخرائط (نفس طريقة عرض قسم وثائق التعمير). الملفات متوفرة في <code>assets/reglementation/</code>.</p>
+    
     <div id="reg-catalog-mount" class="reg-catalog-root"></div>
-    <h2 id="envoyer-pdf">Téléverser un PDF</h2>
-    <p class="hint">Transmettre un arrêté ou une pièce (PDF) : ouverture de la messagerie — joindre le fichier manuellement.</p>
+    
+    <h2 id="envoyer-pdf">إرسال ملف PDF</h2>
+    <p class="hint">لإرسال قرار أو وثيقة (PDF): سيتم فتح خدمة البريد الإلكتروني الخاصة بك — يرجى إرفاق الملف يدوياً.</p>
+    
     <form class="reg-upload-form service-form" data-reg-type="Arrêtés" novalidate>
-      <div class="field"><label for="reg-pdf-arr">Fichier PDF <span class="req">*</span></label><input id="reg-pdf-arr" class="reg-pdf-input" type="file" accept="application/pdf,.pdf" required /></div>
-      <div class="field"><label for="reg-msg-arr">Message (optionnel)</label><textarea id="reg-msg-arr" class="reg-pdf-msg" rows="3"></textarea></div>
-      <button type="submit" class="btn-primary">Ouvrir la messagerie</button>
+      <div class="field">
+        <label for="reg-pdf-arr">ملف PDF <span class="req">*</span></label>
+        <input id="reg-pdf-arr" class="reg-pdf-input" type="file" accept="application/pdf,.pdf" required />
+      </div>
+      <div class="field">
+        <label for="reg-msg-arr">رسالة (اختياري)</label>
+        <textarea id="reg-msg-arr" class="reg-pdf-msg" rows="3" placeholder="ملاحظات أو مراجع..."></textarea>
+      </div>
+      <button type="submit" class="btn-primary">فتح خدمة البريد</button>
     </form>
   </div>
 </main>
+
 <footer id="footer">
   <div class="footer-grid" dir="rtl">
     <div class="footer-brand">
@@ -159,13 +177,6 @@
         <div class="contact-item">
           <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
           <a href="mailto:agencedakhla@gmail.com" style="color:inherit;text-decoration:underline">agencedakhla@gmail.com</a>
-        </div>
-      </div>
-      <div style="margin-top:20px">
-        <p style="font-size:12px;color:rgba(255,255,255,.4);margin-bottom:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase">النشرة الإخبارية</p>
-        <div class="newsletter-form">
-          <input type="email" placeholder="بريدك الإلكتروني" />
-          <button type="button">اشتراك</button>
         </div>
       </div>
     </div>

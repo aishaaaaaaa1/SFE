@@ -68,6 +68,7 @@
     <div class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
   </div>
 </header>
+
 <div class="mobile-menu" id="mobileMenu">
   <button type="button" class="mobile-close" onclick="toggleMenu()">✕</button>
   <a href="index.html">الرئيسية</a>
@@ -79,6 +80,7 @@
   <a href="contact.html">اتصل بنا</a>
   <a href="../index.html" style="color:var(--gold-light);font-weight:600">النسخة الفرنسية ←</a>
 </div>
+
 <section class="page-hero">
   <div class="hero-bg"></div>
   <div class="hero-pattern"></div>
@@ -88,48 +90,138 @@
     <h1 class="page-title">E-Note لطلب المعلومات التعميرية</h1>
   </div>
 </section>
+
 <main class="page-main section">
   <div class="container content-prose">
-    <p><strong>E-Note de renseignements</strong> : formulaire en trois étapes, entièrement sur ce site. À l’envoi, un brouillon d’e-mail est proposé ; les pièces justificatives se transmettent au guichet ou par Courrier.gouv (<a href="service-bod.html">مكتب الضبط digital</a>).</p>
-<p>Loi n°&nbsp;09-08 : droits d’accès, rectification et opposition — <a href="mailto:agencedakhla@gmail.com">agencedakhla@gmail.com</a>.</p>
-<form id="form-enote" class="service-form service-form-wide" novalidate>
-<div class="enote-step" data-step="1">
-<p class="step-label">Étape 1 — Demandeur</p>
-<div class="field"><label for="enote-civilite">Civilité <span class="req">*</span></label><select id="enote-civilite"><option value="">—</option><option>Monsieur</option><option>Madame</option><option>Mademoiselle</option></select></div>
-<div class="field"><label for="enote-nom">الاسم الكامل <span class="req">*</span></label><input id="enote-nom" type="text" /></div>
-<div class="field"><label for="enote-cin">C.I.N. / statut société <span class="req">*</span></label><input id="enote-cin" type="text" /></div>
-<div class="field"><label for="enote-adrdem">Adresse</label><input id="enote-adrdem" type="text" /></div>
-<div class="field"><label for="enote-tel">Téléphone</label><input id="enote-tel" type="tel" /></div>
-<div class="field"><label for="enote-email">البريد الإلكتروني <span class="req">*</span></label><input id="enote-email" type="email" /></div>
-<div class="field"><label for="enote-qualite">En qualité de <span class="req">*</span></label><select id="enote-qualite"><option value="">—</option><option>Propriétaire</option><option>Architecte, géomètre, topographe</option><option>Avocat, notaire</option><option>Mandataire</option></select></div>
-<p class="form-nav"><button type="button" class="btn-primary" data-enote-next>Suivant</button></p>
-</div>
-<div class="enote-step" data-step="2" hidden>
-<p class="step-label">Étape 2 — Terrain</p>
-<div class="field"><label for="enote-statut">Statut foncier <span class="req">*</span></label><select id="enote-statut"><option value="">—</option><option>T (immatriculé)</option><option>R (en cours)</option><option>TNI (non immatriculé)</option></select></div>
-<div class="field"><label for="enote-refcad">Référence foncière</label><input id="enote-refcad" type="text" /></div>
-<div class="field"><label for="enote-adrterrain">Adresse du terrain</label><input id="enote-adrterrain" type="text" /></div>
-<div class="field"><label for="enote-pref">Préfecture / province <span class="req">*</span></label><select id="enote-pref"><option value="">—</option><option>Oued Eddahab</option><option>Aousserd</option></select></div>
-<div class="field"><label for="enote-commune">Commune <span class="req">*</span></label><input id="enote-commune" type="text" placeholder="Ex. Dakhla, Bir Gandouz…" /></div>
-<div class="field"><label for="enote-natureprojet">Nature du projet <span class="req">*</span></label><select id="enote-natureprojet"><option value="">—</option><option>Acquisition</option><option>Cession</option><option>Construction</option><option>Lotissement</option><option>Morcellement</option></select></div>
-<div class="field"><label for="enote-natureterrain">Nature du terrain <span class="req">*</span></label><select id="enote-natureterrain"><option value="">—</option><option>Terrain nu</option><option>Terrain construit</option></select></div>
-<p class="form-nav"><button type="button" class="btn-secondary" data-enote-prev>Précédent</button> <button type="button" class="btn-primary" data-enote-next>Suivant</button></p>
-</div>
-<div class="enote-step" data-step="3" hidden>
-<p class="step-label">Étape 3 — Pièces et validation</p>
-<p class="hint">À fournir au guichet ou en pièces jointes mail : pièce d’identité, certificat de propriété (&lt;&nbsp;3&nbsp;mois), liste coordonnées Lambert visée cadastre, plan cadastral visé ; si mandataire : autorisation et pièce du propriétaire.</p>
-<div class="field field-inline"><label for="enote-captcha">التحقق الأمني : combien font 5&nbsp;+&nbsp;3&nbsp;? <span class="req">*</span></label><input id="enote-captcha" type="text" inputmode="numeric" autocomplete="off" /></div>
-<div class="field field-check"><label><input id="enote-accept" type="checkbox" /> J’accepte les conditions générales et la mention relative aux données personnelles.</label></div>
-<p class="form-nav"><button type="button" class="btn-secondary" data-enote-prev>Précédent</button> <button type="submit" class="btn-primary">Envoyer</button></p>
-</div>
-</form>
-<div id="enote-success" class="form-success" hidden>
-<h2>الطلب جاهز</h2>
-<p><a class="btn-primary js-mailto-enote" href="#">فتح البريد بنص مُعد مسبقا</a></p>
-<p><a class="btn-secondary" href="service-bod.html">مكتب الضبط</a></p>
-</div>
+    <p><strong>E-Note للمعلومات</strong>: استمارة من ثلاث مراحل تتم بالكامل على هذا الموقع. عند الإرسال، سيتم اقتراح مسودة بريد إلكتروني؛ أما الوثائق الإثباتية فيتم إرسالها عبر الشباك أو من خلال منصة "Courrier.gouv" عبر <a href="service-bod.html">مكتب الضبط الرقمي</a>.</p>
+    <p>وفقاً للقانون رقم 08-09: لديكم الحق في الولوج، التصحيح والتعرض — <a href="mailto:agencedakhla@gmail.com">agencedakhla@gmail.com</a>.</p>
+
+    <form id="form-enote" class="service-form service-form-wide" novalidate>
+      <div class="enote-step" data-step="1">
+        <p class="step-label">المرحلة 1 — صاحب الطلب</p>
+        <div class="field">
+          <label for="enote-civilite">الصفة <span class="req">*</span></label>
+          <select id="enote-civilite">
+            <option value="">—</option>
+            <option>السيد</option>
+            <option>السيدة</option>
+            <option>الآنسة</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="enote-nom">الاسم الكامل <span class="req">*</span></label>
+          <input id="enote-nom" type="text" placeholder="الاسم الشخصي والعائلي" />
+        </div>
+        <div class="field">
+          <label for="enote-cin">رقم البطاقة الوطنية / وضعية الشركة <span class="req">*</span></label>
+          <input id="enote-cin" type="text" />
+        </div>
+        <div class="field">
+          <label for="enote-adrdem">العنوان</label>
+          <input id="enote-adrdem" type="text" />
+        </div>
+        <div class="field">
+          <label for="enote-tel">الهاتف</label>
+          <input id="enote-tel" type="tel" />
+        </div>
+        <div class="field">
+          <label for="enote-email">البريد الإلكتروني <span class="req">*</span></label>
+          <input id="enote-email" type="email" />
+        </div>
+        <div class="field">
+          <label for="enote-qualite">بصفته <span class="req">*</span></label>
+          <select id="enote-qualite">
+            <option value="">—</option>
+            <option>مالك</option>
+            <option>مهندس معماري، مهندس مساح، طوبوغرافي</option>
+            <option>محامٍ، موثق</option>
+            <option>وكيل</option>
+          </select>
+        </div>
+        <p class="form-nav"><button type="button" class="btn-primary" data-enote-next>التالي</button></p>
+      </div>
+
+      <div class="enote-step" data-step="2" hidden>
+        <p class="step-label">المرحلة 2 — العقار</p>
+        <div class="field">
+          <label for="enote-statut">الوضعية العقارية <span class="req">*</span></label>
+          <select id="enote-statut">
+            <option value="">—</option>
+            <option>محفظ (T)</option>
+            <option>في طور التحفيظ (R)</option>
+            <option>غير محفظ (TNI)</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="enote-refcad">المراجع العقارية</label>
+          <input id="enote-refcad" type="text" placeholder="رقم الرسم العقاري مثلاً" />
+        </div>
+        <div class="field">
+          <label for="enote-adrterrain">عنوان العقار</label>
+          <input id="enote-adrterrain" type="text" />
+        </div>
+        <div class="field">
+          <label for="enote-pref">العمالة / الإقليم <span class="req">*</span></label>
+          <select id="enote-pref">
+            <option value="">—</option>
+            <option>وادي الذهب</option>
+            <option>أوسرد</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="enote-commune">الجماعة <span class="req">*</span></label>
+          <input id="enote-commune" type="text" placeholder="مثال: الداخلة، بئر كندوز..." />
+        </div>
+        <div class="field">
+          <label for="enote-natureprojet">طبيعة المشروع <span class="req">*</span></label>
+          <select id="enote-natureprojet">
+            <option value="">—</option>
+            <option>اقتناء</option>
+            <option>تفويت</option>
+            <option>بناء</option>
+            <option>تجزئة</option>
+            <option>تقسيم</option>
+          </select>
+        </div>
+        <div class="field">
+          <label for="enote-natureterrain">حالة العقار <span class="req">*</span></label>
+          <select id="enote-natureterrain">
+            <option value="">—</option>
+            <option>أرض عارية</option>
+            <option>أرض مبنية</option>
+          </select>
+        </div>
+        <p class="form-nav">
+          <button type="button" class="btn-secondary" data-enote-prev>السابق</button> 
+          <button type="button" class="btn-primary" data-enote-next>التالي</button>
+        </p>
+      </div>
+
+      <div class="enote-step" data-step="3" hidden>
+        <p class="step-label">المرحلة 3 — الوثائق والتأكيد</p>
+        <p class="hint">يجب توفيرها في الشباك أو كملحقات بريد إلكتروني: نسخة من بطاقة الهوية، شهادة الملكية (أقل من 3 أشهر)، لائحة إحداثيات "لامبير" مصادق عليها من المحافظة، تصميم عقاري؛ في حال وجود وكيل: وكالة مصادق عليها ونسخة من بطاقة المالك.</p>
+        <div class="field field-inline">
+          <label for="enote-captcha">التحقق الأمني: كم يساوي 5 + 3 ؟ <span class="req">*</span></label>
+          <input id="enote-captcha" type="text" inputmode="numeric" autocomplete="off" />
+        </div>
+        <div class="field field-check">
+          <label><input id="enote-accept" type="checkbox" /> أوافق على الشروط العامة والملاحظات المتعلقة بالبيانات الشخصية.</label>
+        </div>
+        <p class="form-nav">
+          <button type="button" class="btn-secondary" data-enote-prev>السابق</button> 
+          <button type="submit" class="btn-primary">إرسال الطلب</button>
+        </p>
+      </div>
+    </form>
+
+    <div id="enote-success" class="form-success" hidden>
+      <h2>الطلب جاهز</h2>
+      <p><a class="btn-primary js-mailto-enote" href="#">فتح البريد بنص مُعد مسبقاً</a></p>
+      <p><a class="btn-secondary" href="service-bod.html">العودة إلى مكتب الضبط</a></p>
+    </div>
   </div>
 </main>
+
 <footer id="footer">
   <div class="footer-grid" dir="rtl">
     <div class="footer-brand">
@@ -182,13 +274,6 @@
           <a href="mailto:agencedakhla@gmail.com" style="color:inherit;text-decoration:underline">agencedakhla@gmail.com</a>
         </div>
       </div>
-      <div style="margin-top:20px">
-        <p style="font-size:12px;color:rgba(255,255,255,.4);margin-bottom:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase">النشرة الإخبارية</p>
-        <div class="newsletter-form">
-          <input type="email" placeholder="بريدك الإلكتروني" />
-          <button type="button">اشتراك</button>
-        </div>
-      </div>
     </div>
   </div>
   <div class="footer-bottom" dir="rtl">
@@ -203,7 +288,5 @@
 <script src="../../assets/js/main.js"></script>
 <script src="../../assets/js/forms-local.js"></script>
 <script src="../../assets/js/arabic-link-localizer.js"></script>
-
-
 </body>
 </html>
