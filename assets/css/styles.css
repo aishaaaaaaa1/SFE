@@ -402,6 +402,12 @@ body:not(.page-inner) #hero .hero-sub{color:#334155}
   transition:gap .2s;
 }
 .news-card:hover .news-link{gap:9px}
+/* Messages chargement / erreur API actualités (contenu injecté après coup) */
+.news-api-loading,.news-api-error,.news-api-empty,.news-api-hint{
+  color:var(--navy);font-size:14px;line-height:1.6;margin-top:12px;
+}
+.news-api-error{color:#b00020;font-weight:500}
+.news-api-hint a{color:var(--blue)}
 .news-footer{display:flex;justify-content:center;margin-top:44px}
 .btn-outline{
   display:inline-flex;align-items:center;gap:9px;

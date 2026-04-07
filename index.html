@@ -285,41 +285,14 @@
       </div>
       <a href="pages/actualites.html" class="btn-outline" style="font-size:13px;padding:10px 22px">Toutes les actualités</a>
     </div>
-    <div class="news-grid">
-      <div class="news-card reveal">
-        <div class="news-img">
-          <div class="news-img-placeholder">🏙️</div>
-          <span class="news-cat">Événement</span>
-        </div>
-        <div class="news-body">
-          <div class="news-date">Octobre 2025</div>
-          <h3 class="news-title">L'AUDOE célèbre le Mois urbain d'octobre 2025 et la Journée mondiale des villes</h3>
-          <a href="pages/actu-mois-urbain.html" class="news-link">Lire la suite <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        </div>
-      </div>
-      <div class="news-card reveal">
-        <div class="news-img">
-          <div class="news-img-placeholder">🏗️</div>
-          <span class="news-cat">Aménagement</span>
-        </div>
-        <div class="news-body">
-          <div class="news-date">2025</div>
-          <h3 class="news-title">Lancement de l'enquête publique relative au projet de plan d'aménagement sectoriel de la zone des grands équipements et services Bir Gandouz</h3>
-          <a href="pages/actu-bir-gandouz.html" class="news-link">Lire la suite <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        </div>
-      </div>
-      <div class="news-card reveal">
-        <div class="news-img">
-          <div class="news-img-placeholder">👑</div>
-          <span class="news-cat">Royal</span>
-        </div>
-        <div class="news-body">
-          <div class="news-date">2024</div>
-          <h3 class="news-title">SM le Roi préside à Dakhla la cérémonie de lancement des programmes de développement des régions Dakhla-Oued Eddahab et Guelmim-Oued Noun</h3>
-          <a href="pages/actu-roi-dakhla.html" class="news-link">Lire la suite <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M5 12h14M12 5l7 7-7 7"/></svg></a>
-        </div>
-      </div>
-    </div>
+    <div
+      class="news-grid"
+      data-news-feed
+      data-news-locale="fr"
+      data-news-from="root_fr"
+      data-news-limit="3"
+      data-news-mode="grid"
+    ></div>
   </div>
 </section>
 
@@ -427,5 +400,6 @@
 </footer>
 
 <script src="assets/js/main.js"></script>
+<script src="assets/js/news-feed.js"></script>
 </body>
 </html>

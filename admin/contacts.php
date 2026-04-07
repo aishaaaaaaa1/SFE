@@ -1,0 +1,82 @@
+<?php
+
+declare(strict_types=1);
+
+require __DIR__ . '/bootstrap_admin.php';
+require __DIR__ . '/includes/layout.php';
+
+admin_require_login();
+
+$pdo = admin_pdo();
+$id = isset($_GET['id']) ? (int) $_GET['id'] : 0;
+
+if ($id > 0) {
+    $stmt = $pdo->prepare('SELECT * FROM contact_submissions WHERE id = ?');
+    $stmt->execute([$id]);
+    $row = $stmt->fetch();
+    admin_header('Message #' . $id, 'contacts');
+    if (!$row) {
+        echo '<p class="text-muted">Enregistrement introuvable.</p>';
+    } else {
+        echo '<p><a href="contacts.php" class="btn btn-secondary">← Liste</a></p>';
+        echo '<div class="admin-table-wrap"><table class="admin-table">';
+        foreach ($row as $k => $v) {
+            echo '<tr><th>' . admin_h((string) $k) . '</th><td>';
+            if ($k === 'message') {
+                echo '<pre class="admin-preview">' . admin_h((string) $v) . '</pre>';
+            } else {
+                echo admin_h((string) $v);
+            }
+            echo '</td></tr>';
+        }
+        echo '</table></div>';
+    }
+    admin_footer();
+    exit;
+}
+
+$page = max(1, (int) ($_GET['page'] ?? 1));
+$per = 25;
+$off = ($page - 1) * $per;
+$total = (int) $pdo->query('SELECT COUNT(*) FROM contact_submissions')->fetchColumn();
+$pages = max(1, (int) ceil($total / $per));
+
+$stmt = $pdo->prepare(
+    'SELECT id, source, nom, email, sujet, created_at FROM contact_submissions ORDER BY id DESC LIMIT :lim OFFSET :off'
+);
+$stmt->bindValue(':lim', $per, PDO::PARAM_INT);
+$stmt->bindValue(':off', $off, PDO::PARAM_INT);
+$stmt->execute();
+$rows = $stmt->fetchAll();
+
+admin_header('Messages (contact & page Création)', 'contacts');
+?>
+<div class="admin-table-wrap">
+<table class="admin-table">
+<thead><tr><th>ID</th><th>Source</th><th>Date</th><th>Nom</th><th>E-mail</th><th>Sujet</th><th></th></tr></thead>
+<tbody>
+<?php foreach ($rows as $r) : ?>
+<tr>
+<td><?= (int) $r['id'] ?></td>
+<td><?= admin_h($r['source']) ?></td>
+<td><?= admin_h($r['created_at']) ?></td>
+<td><?= admin_h($r['nom']) ?></td>
+<td><?= admin_h($r['email']) ?></td>
+<td><?= admin_h(admin_shorten((string) $r['sujet'], 60)) ?></td>
+<td><a href="contacts.php?id=<?= (int) $r['id'] ?>">Voir</a></td>
+</tr>
+<?php endforeach; ?>
+<?php if (count($rows) === 0) : ?>
+<tr><td colspan="7" class="text-muted">Aucun message.</td></tr>
+<?php endif; ?>
+</tbody>
+</table>
+</div>
+<?php if ($pages > 1) : ?>
+<p class="pagination">Page <?= $page ?> / <?= $pages ?>
+<?php if ($page > 1) : ?><a href="contacts.php?page=<?= $page - 1 ?>">Précédent</a><?php endif; ?>
+<?php if ($page < $pages) : ?><a href="contacts.php?page=<?= $page + 1 ?>">Suivant</a><?php endif; ?>
+</p>
+<?php endif; ?>
+<?php
+admin_footer();

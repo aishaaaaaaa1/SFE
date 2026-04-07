@@ -1,3 +1,17 @@
+/* URL de base du site (segment après le host:port).
+   '' = serveur PHP intégré ou racine Apache (ex. http://localhost:8081/index.html).
+   '/SFE' = projet dans htdocs/SFE (ex. http://localhost/SFE/index.html).
+   Avant main.js : <script>window.AUDOE_SITE_BASE='/SFE';</script> pour surcharger. */
+(function () {
+  if (typeof window.AUDOE_SITE_BASE === 'undefined') {
+    window.AUDOE_SITE_BASE = '';
+  }
+  if (typeof window.AUDOE_API_BASE === 'undefined') {
+    var site = String(window.AUDOE_SITE_BASE || '').replace(/\/+$/, '');
+    window.AUDOE_API_BASE = site ? site + '/api' : '';
+  }
+})();
+
 (function () {
   var header = document.getElementById('header');
   var isHomeHeader = header && !document.body.classList.contains('page-inner');

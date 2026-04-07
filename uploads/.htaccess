@@ -1,0 +1,5 @@
+# Désactiver l'exécution de scripts dans les téléversements (Apache)
+<IfModule mod_php.c>
+  php_flag engine off
+</IfModule>
+Options -Indexes

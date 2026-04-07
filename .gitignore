@@ -8,3 +8,7 @@ node_modules/
 dist/
 build/
 coverage/
+
+api/config.local.php
+uploads/regulation/*
+!uploads/regulation/.gitkeep
