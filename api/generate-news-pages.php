@@ -1,0 +1,234 @@
+<?php
+/**
+ * Script: api/generate-news-pages.php
+ * Générer automatiquement les pages HTML pour toutes les actualités
+ */
+
+header('Content-Type: application/json; charset=utf-8');
+header('Access-Control-Allow-Origin: *');
+
+try {
+    $config = require __DIR__ . '/config.local.php';
+    
+    $host = $config['db']['host'];
+    $user = $config['db']['user'];
+    $pass = $config['db']['pass'];
+    $db = $config['db']['name'];
+    
+    $dsn = "mysql:host=$host;dbname=$db;charset=utf8mb4";
+    $pdo = new PDO($dsn, $user, $pass, [
+        PDO::ATTR_ERRMODE => PDO::ERRMODE_EXCEPTION,
+    ]);
+
+    // Récupérer toutes les actualités
+    $stmt = $pdo->prepare("
+        SELECT slug, emoji, date_label_fr, category_fr, title_fr, excerpt_fr, 
+               date_label_ar, category_ar, title_ar, excerpt_ar
+        FROM news_articles
+        WHERE published = 1
+        ORDER BY sort_order ASC
+    ");
+    $stmt->execute();
+    $news = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+    $pagesDir = __DIR__ . '/../pages';
+    $generated = 0;
+
+    foreach ($news as $article) {
+        // Template HTML pour chaque actualité
+        $html = <<<HTML
+<!DOCTYPE html>
+<html lang="fr" dir="ltr">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>{$article['title_fr']} · AUDOE</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=DM+Sans:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+<link rel="stylesheet" href="../assets/css/styles.css"/>
+</head>
+<body class="page-inner">
+<header id="header">
+  <div class="header-inner">
+    <a href="../index.html" class="logo">
+      <img class="logo-img" src="../assets/images/logo-fr.png" alt="Agence Urbaine de Dakhla – Oued Eddahab"/>
+    </a>
+    <nav>
+      <div class="nav-item">
+        <span class="nav-link">Présentation <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></span>
+        <div class="dropdown">
+          <a href="presentation-creation.html">Création</a>
+          <a href="presentation-missions.html">Missions et Attributions</a>
+          <a href="presentation-champs.html">Champs d'action territoriale</a>
+          <a href="presentation-organisation.html">Organisation structurelle</a>
+          <a href="presentation-responsables.html">Responsables de l'AUDOE</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <span class="nav-link">Gestion Urbaine <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></span>
+        <div class="dropdown">
+          <a href="gestion-procedures.html">Procédures d'autorisation</a>
+          <a href="gestion-assistance.html">Assistance technique et architecturale</a>
+          <a href="gestion-controle.html">Contrôle de chantier</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <span class="nav-link">Planification <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></span>
+        <div class="dropdown">
+          <a href="planif-documents.html">Documents d'urbanisme</a>
+          <a href="planif-etudes.html">Études urbanistiques et architecturales</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <span class="nav-link">Services en ligne <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></span>
+        <div class="dropdown">
+          <a href="service-preinstruction.html">Pré-instruction en ligne</a>
+          <a href="service-enote.html">E-Note</a>
+          <a href="service-reclamation.html">Réclamation en ligne</a>
+          <a href="service-demande-info.html">Demande d'informations</a>
+          <a href="service-taamir.html">Documents d'urbanisme en ligne (Taamir)</a>
+          <a href="service-bod.html">Bureau d'Ordre Digital</a>
+        </div>
+      </div>
+      <div class="nav-item">
+        <span class="nav-link">Réglementation <svg class="arrow" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M6 9l6 6 6-6"/></svg></span>
+        <div class="dropdown">
+          <a href="reg-dahirs.html">Dahirs</a>
+          <a href="reg-decrets.html">Décrets</a>
+          <a href="reg-circulaires.html">Circulaires</a>
+          <a href="reg-arretes.html">Arrêtés</a>
+        </div>
+      </div>
+      <a href="contact.html" class="nav-link">Contact</a>
+      <a href="service-preinstruction.html" class="nav-link header-cta">Pré-instruction en ligne</a>
+      <a href="ar/actu-{$article['slug']}.html" class="lang-btn">🇲🇦 العربية</a>
+    </nav>
+    <div class="burger" onclick="toggleMenu()"><span></span><span></span><span></span></div>
+  </div>
+</header>
+<div class="mobile-menu" id="mobileMenu">
+  <button type="button" class="mobile-close" onclick="toggleMenu()">✕</button>
+  <a href="../index.html">Accueil</a>
+  <a href="presentation-creation.html">Présentation</a>
+  <a href="gestion-procedures.html">Gestion Urbaine</a>
+  <a href="planif-documents.html">Planification Urbaine</a>
+  <a href="service-preinstruction.html">Services en Ligne</a>
+  <a href="reg-dahirs.html">Réglementation</a>
+  <a href="contact.html">Contact</a>
+  <a href="service-preinstruction.html" style="color:var(--gold-light);font-weight:600">Pré-instruction en ligne →</a>
+  <a href="ar/actu-{$article['slug']}.html" style="color:var(--gold-light);font-weight:600">🇲🇦 العربية</a>
+</div>
+<section class="page-hero">
+  <div class="hero-bg"></div>
+  <div class="hero-pattern"></div>
+  <div class="container page-hero-inner">
+    <nav class="breadcrumb" aria-label="Fil d'Ariane"><a href="../index.html">Accueil</a><span class="sep">/</span><a href="actualites.html">Actualités</a><span class="sep">/</span><span>{$article['title_fr']}</span></nav>
+    <div class="section-tag">{$article['emoji']} {$article['category_fr']}</div>
+    <h1 class="page-title">{$article['title_fr']}</h1>
+    <div style="font-size:14px;color:rgba(255,255,255,.7);margin-top:16px">{$article['date_label_fr']}</div>
+  </div>
+</section>
+<main class="page-main section section-alt">
+  <div class="container narrow content-prose">
+    <p>{$article['excerpt_fr']}</p>
+    <p><a href="actualites.html">← Retour aux actualités</a></p>
+  </div>
+</main>
+<footer id="footer">
+  <div class="footer-grid">
+    <div class="footer-brand">
+      <a href="../index.html" class="logo" style="display:inline-flex">
+        <img class="logo-img logo-img--footer" src="../assets/images/logo-fr.png" alt="Agence Urbaine de Dakhla – Oued Eddahab"/>
+      </a>
+      <p>Agence Urbaine de Dakhla – Oued Eddahab. Établissement public au service du développement urbain durable de la région.</p>
+      <div class="footer-socials">
+        <a class="social-btn" href="https://www.facebook.com/agencedakhla/" target="_blank" rel="noopener noreferrer" title="Facebook"><svg viewBox="0 0 24 24"><path d="M18 2h-3a5 5 0 00-5 5v3H7v4h3v8h4v-8h3l1-4h-4V7a1 1 0 011-1h3z"/></svg></a>
+        <a class="social-btn" href="galerie.html" title="Galerie"><svg viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="5"/><path d="M16 11.37A4 4 0 1112.63 8 4 4 0 0116 11.37z"/><line x1="17.5" y1="6.5" x2="17.51" y2="6.5"/></svg></a>
+        <a class="social-btn" href="actualites.html" title="Actualités"><svg viewBox="0 0 24 24"><path d="M16 8a6 6 0 016 6v7h-4v-7a2 2 0 00-2-2 2 2 0 00-2 2v7h-4v-7a6 6 0 016-6z"/><rect x="2" y="9" width="4" height="12"/><circle cx="4" cy="4" r="2"/></svg></a>
+      </div>
+    </div>
+    <div class="footer-col">
+      <h4>Navigation</h4>
+      <ul class="footer-links">
+        <li><a href="presentation-creation.html">Présentation</a></li>
+        <li><a href="gestion-procedures.html">Gestion Urbaine</a></li>
+        <li><a href="planif-documents.html">Planification</a></li>
+        <li><a href="service-preinstruction.html">Services en ligne</a></li>
+        <li><a href="reg-dahirs.html">Réglementation</a></li>
+        <li><a href="contact.html">Contact</a></li>
+        <li><a href="avis-annonces.html">Avis & Annonces</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Services</h4>
+      <ul class="footer-links">
+        <li><a href="service-preinstruction.html">Pré-instruction</a></li>
+        <li><a href="service-enote.html">E-Note</a></li>
+        <li><a href="service-bod.html">Bureau d'Ordre Digital</a></li>
+        <li><a href="service-reclamation.html">Réclamation en ligne</a></li>
+        <li><a href="service-taamir.html">Documents d'urbanisme (Taamir)</a></li>
+        <li><a href="service-demande-info.html">Demande d'informations</a></li>
+      </ul>
+    </div>
+    <div class="footer-col">
+      <h4>Contact</h4>
+      <div class="footer-contact">
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0118 0z"/><circle cx="12" cy="10" r="3"/></svg>
+          <span>Avenue Mohammed VI, Dakhla – Oued Eddahab, Maroc</span>
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 01-2.18 2 19.79 19.79 0 01-8.63-3.07 19.5 19.5 0 01-6-6 19.79 19.79 0 01-3.07-8.67A2 2 0 014.11 2h3a2 2 0 012 1.72c.127.96.361 1.903.7 2.81a2 2 0 01-.45 2.11L8.09 9.91a16 16 0 006 6l1.27-1.27a2 2 0 012.11-.45c.907.339 1.85.573 2.81.7A2 2 0 0122 16.92z"/></svg>
+          <span>0528-89-78-01</span>
+        </div>
+        <div class="contact-item">
+          <svg viewBox="0 0 24 24"><path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/><polyline points="22,6 12,13 2,6"/></svg>
+          <a href="mailto:agencedakhla@gmail.com" style="color:inherit;text-decoration:underline">agencedakhla@gmail.com</a>
+        </div>
+      </div>
+      <div style="margin-top:20px">
+        <p style="font-size:12px;color:rgba(255,255,255,.4);margin-bottom:10px;font-weight:600;letter-spacing:.06em;text-transform:uppercase">Newsletter</p>
+        <div class="newsletter-form">
+          <input type="email" placeholder="Votre email" />
+          <button type="button">S'abonner</button>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    <p>© 2026 Agence Urbaine de Dakhla – Oued Eddahab. Tous droits réservés.</p>
+    <div class="footer-bottom-links">
+      <a href="plan-site.html">Plan du site</a>
+      <a href="../index.html">Politique de confidentialité</a>
+      <a href="../index.html">Accessibilité</a>
+    </div>
+  </div>
+</footer>
+<script src="../assets/js/main.js"></script>
+<script src="../assets/js/forms-local.js"></script>
+</body>
+</html>
+HTML;
+
+        // Créer le fichier HTML
+        $filename = $pagesDir . '/actu-' . $article['slug'] . '.html';
+        file_put_contents($filename, $html);
+        $generated++;
+    }
+
+    echo json_encode([
+        'status' => 'success',
+        'message' => 'Pages HTML générées avec succès !',
+        'generated' => $generated,
+        'pages_dir' => $pagesDir
+    ], JSON_UNESCAPED_UNICODE);
+
+} catch (Exception $e) {
+    http_response_code(500);
+    echo json_encode([
+        'status' => 'error',
+        'message' => $e->getMessage()
+    ], JSON_UNESCAPED_UNICODE);
+}
+?>
