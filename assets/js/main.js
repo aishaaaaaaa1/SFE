@@ -99,3 +99,20 @@
     });
   }
 })();
+
+// Automatically load fiche-pto-image.js for news detail pages (actu-*.html) if missing.
+(function () {
+  var path = window.location.pathname;
+  if (path.indexOf('/actu-') !== -1) {
+    var hasScript = Array.from(document.scripts).some(function (s) {
+      return s.src.indexOf('fiche-pto-image.js') !== -1;
+    });
+    if (!hasScript) {
+      var isAr = path.indexOf('/pages/ar/') !== -1;
+      var prefix = isAr ? '../../' : '../';
+      var script = document.createElement('script');
+      script.src = prefix + 'assets/js/fiche-pto-image.js';
+      document.body.appendChild(script);
+    }
+  }
+})();

@@ -43,6 +43,7 @@ try {
         throw new RuntimeException('Slug obligatoire.');
     }
 
+
     $fields = [
         'emoji' => audoe_str($_POST['emoji'] ?? '', 20),
         'date_label_fr' => audoe_str($_POST['date_label_fr'] ?? '', 120),
@@ -57,7 +58,34 @@ try {
         'ar_path' => audoe_str($_POST['ar_path'] ?? '', 500),
         'sort_order' => (int) ($_POST['sort_order'] ?? 0),
         'published' => isset($_POST['published']) ? 1 : 0,
+        'image_path' => null,
     ];
+
+    // Gestion de l'upload d'image (PTO)
+    if (!empty($_FILES['image']['name']) && is_uploaded_file($_FILES['image']['tmp_name'])) {
+        $allowedTypes = ['image/jpeg' => 'jpg', 'image/png' => 'png', 'image/webp' => 'webp'];
+        $f = $_FILES['image'];
+        $mime = mime_content_type($f['tmp_name']);
+        if (!isset($allowedTypes[$mime])) {
+            throw new RuntimeException('Format d\'image non supporté. Formats acceptés : jpg, png, webp.');
+        }
+        $ext = $allowedTypes[$mime];
+        $uploadDir = dirname(__DIR__) . '/uploads/news';
+        if (!is_dir($uploadDir)) {
+            mkdir($uploadDir, 0755, true);
+        }
+        $baseName = $slug . '_' . date('YmdHis') . '_' . bin2hex(random_bytes(3)) . '.' . $ext;
+        $dest = $uploadDir . '/' . $baseName;
+        if (!move_uploaded_file($f['tmp_name'], $dest)) {
+            throw new RuntimeException('Erreur lors de l\'enregistrement de l\'image.');
+        }
+        $fields['image_path'] = 'uploads/news/' . $baseName;
+    } else if ($id > 0) {
+        // En modification, garder l'image existante si aucune nouvelle image n'est uploadée
+        $stmtImg = $pdo->prepare('SELECT image_path FROM news_articles WHERE id = ?');
+        $stmtImg->execute([$id]);
+        $fields['image_path'] = $stmtImg->fetchColumn() ?: null;
+    }
 
     $pub = audoe_str($_POST['published_at'] ?? '', 10);
     $publishedAt = $pub !== '' ? $pub : null;
@@ -76,7 +104,7 @@ try {
         }
         $sql = 'UPDATE news_articles SET slug=:slug, emoji=:emoji, date_label_fr=:date_label_fr, date_label_ar=:date_label_ar,
             category_fr=:category_fr, category_ar=:category_ar, title_fr=:title_fr, title_ar=:title_ar,
-            excerpt_fr=:excerpt_fr, excerpt_ar=:excerpt_ar, fr_path=:fr_path, ar_path=:ar_path,
+            excerpt_fr=:excerpt_fr, excerpt_ar=:excerpt_ar, fr_path=:fr_path, ar_path=:ar_path, image_path=:image_path,
             sort_order=:sort_order, published=:published, published_at=:published_at WHERE id=:id';
         $stmt = $pdo->prepare($sql);
         $stmt->execute([
@@ -92,6 +120,7 @@ try {
             'excerpt_ar' => $fields['excerpt_ar'],
             'fr_path' => $fields['fr_path'],
             'ar_path' => $fields['ar_path'],
+            'image_path' => $fields['image_path'],
             'sort_order' => $fields['sort_order'],
             'published' => $fields['published'],
             'published_at' => $publishedAt,
@@ -105,8 +134,8 @@ try {
             throw new RuntimeException('Ce slug existe déjà.');
         }
         $stmt = $pdo->prepare(
-            'INSERT INTO news_articles (slug, emoji, date_label_fr, date_label_ar, category_fr, category_ar, title_fr, title_ar, excerpt_fr, excerpt_ar, fr_path, ar_path, sort_order, published, published_at)
-             VALUES (:slug, :emoji, :date_label_fr, :date_label_ar, :category_fr, :category_ar, :title_fr, :title_ar, :excerpt_fr, :excerpt_ar, :fr_path, :ar_path, :sort_order, :published, :published_at)'
+            'INSERT INTO news_articles (slug, emoji, date_label_fr, date_label_ar, category_fr, category_ar, title_fr, title_ar, excerpt_fr, excerpt_ar, fr_path, ar_path, image_path, sort_order, published, published_at)
+             VALUES (:slug, :emoji, :date_label_fr, :date_label_ar, :category_fr, :category_ar, :title_fr, :title_ar, :excerpt_fr, :excerpt_ar, :fr_path, :ar_path, :image_path, :sort_order, :published, :published_at)'
         );
         $stmt->execute([
             'slug' => $slug,
@@ -121,6 +150,7 @@ try {
             'excerpt_ar' => $fields['excerpt_ar'],
             'fr_path' => $fields['fr_path'],
             'ar_path' => $fields['ar_path'],
+            'image_path' => $fields['image_path'],
             'sort_order' => $fields['sort_order'],
             'published' => $fields['published'],
             'published_at' => $publishedAt,

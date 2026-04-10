@@ -26,15 +26,16 @@ if ($limit > 50) {
 
 try {
     $pdo = audoe_pdo($config['db']);
+    // Limiter à 3 actualités principales (par exemple par sort_order ou id)
     $stmt = $pdo->prepare(
-        'SELECT slug, emoji, date_label_fr, date_label_ar, category_fr, category_ar,
+        'SELECT slug, emoji, image_path, date_label_fr, date_label_ar, category_fr, category_ar,
                 title_fr, title_ar, excerpt_fr, excerpt_ar, fr_path, ar_path
          FROM news_articles
          WHERE published = 1
          ORDER BY sort_order ASC, published_at DESC, id DESC
-         LIMIT :lim'
+         LIMIT :limit'
     );
-    $stmt->bindValue(':lim', $limit, PDO::PARAM_INT);
+    $stmt->bindValue(':limit', $limit, PDO::PARAM_INT);
     $stmt->execute();
     $rows = $stmt->fetchAll();
 
@@ -42,10 +43,22 @@ try {
     foreach ($rows as $row) {
         $isAr = $locale === 'ar';
         $href = audoe_news_href($row['fr_path'], $row['ar_path'], $from);
+        
+        $imagePath = $row['image_path'];
+        if ($imagePath) {
+            $imagePath = ltrim($imagePath, '/');
+            if ($from === 'pages_fr') {
+                $imagePath = '../' . $imagePath;
+            } elseif ($from === 'pages_ar') {
+                $imagePath = '../../' . $imagePath;
+            }
+        }
+
         $items[] = [
             'slug' => $row['slug'],
             'href' => $href,
             'emoji' => $row['emoji'],
+            'image_path' => $imagePath,
             'date_label' => $isAr ? $row['date_label_ar'] : $row['date_label_fr'],
             'category' => $isAr ? $row['category_ar'] : $row['category_fr'],
             'title' => $isAr ? $row['title_ar'] : $row['title_fr'],

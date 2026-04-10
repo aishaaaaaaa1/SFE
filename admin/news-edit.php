@@ -34,7 +34,17 @@ $v = static function (string $key, $default = '') use ($row) {
 
 admin_header($titlePage, 'news');
 ?>
-<form method="post" action="news-save.php" class="admin-form">
+<form method="post" action="news-save.php" class="admin-form" enctype="multipart/form-data">
+<div class="field">
+<label for="image">Image principale (PTO, optionnelle, jpg/png/webp)</label>
+<input type="file" id="image" name="image" accept="image/*"/>
+<?php if (!empty($v('image_path'))): ?>
+    <div style="margin-top:8px">
+        <img src="../<?= admin_h($v('image_path')) ?>" alt="Image actuelle" style="max-width:180px;max-height:120px;border:1px solid #ccc"/>
+        <br/><small>Image actuelle</small>
+    </div>
+<?php endif; ?>
+</div>
 <input type="hidden" name="csrf" value="<?= admin_h($csrf) ?>"/>
 <input type="hidden" name="action" value="save"/>
 <input type="hidden" name="id" value="<?= $id ?>"/>

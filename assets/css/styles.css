@@ -1,3 +1,34 @@
+/* PTO image in fiche (news detail) page */
+.fiche-pto-image {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  margin: 0 auto 32px auto;
+  border-radius: 16px;
+  box-shadow: 0 4px 24px rgba(11,37,69,.10);
+}
+/* News list flex layout */
+.news-list-flex {
+  display: flex;
+  align-items: flex-start;
+  gap: 32px;
+  margin-bottom: 36px;
+}
+.news-list-img-wrap {
+  flex: 0 0 320px;
+  max-width: 320px;
+}
+.news-list-img {
+  width: 100%;
+  height: 180px;
+  object-fit: cover;
+  border-radius: 12px;
+  display: block;
+}
+.news-list-txt {
+  flex: 1 1 0%;
+  min-width: 0;
+}
 
 *,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
 :root{
@@ -381,6 +412,15 @@ body:not(.page-inner) #hero .hero-sub{color:#334155}
   height:200px;position:relative;overflow:hidden;
   background:linear-gradient(135deg,var(--navy),var(--blue));
   display:flex;align-items:center;justify-content:center;
+}
+.news-img.news-img-hasimg{
+  background:#fff;
+}
+.news-img-pto-full {
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  display:block;
 }
 .news-img-placeholder{
   width:100%;height:100%;display:flex;align-items:center;justify-content:center;

@@ -45,13 +45,21 @@
     var readMore = locale === 'ar' ? 'اقرأ المزيد ' : 'Lire la suite ';
     return items
       .map(function (it) {
-        var em = it.emoji || '📌';
+        var imgHtml = '';
+        var imgClass = 'news-img';
+        if (it.image_path) {
+          // Always resolve from site root
+          var imgPath = '/' + String(it.image_path).replace(/^.*uploads\//, 'uploads/').replace(/^pages\//, '').replace(/^\/+/, '');
+          imgHtml = '<img src="' + esc(imgPath) + '" alt="Image actualité" class="news-img-pto-full"/>';
+          imgClass += ' news-img-hasimg';
+        } else {
+          var em = it.emoji || '📌';
+          imgHtml = '<div class="news-img-placeholder">' + esc(em) + '</div>';
+        }
         return (
           '<div class="news-card">' +
-          '<div class="news-img">' +
-          '<div class="news-img-placeholder">' +
-          esc(em) +
-          '</div>' +
+          '<div class="' + imgClass + '">' +
+          imgHtml +
           '<span class="news-cat">' +
           esc(it.category || '') +
           '</span></div>' +
@@ -76,19 +84,21 @@
   function renderList(items) {
     return items
       .map(function (it) {
+        var imgHtml = '';
+        if (it.image_path) {
+          // Always resolve from site root
+          var imgPath = '/' + String(it.image_path).replace(/^.*uploads\//, 'uploads/').replace(/^pages\//, '').replace(/^\/+/, '');
+          imgHtml = '<img src="' + esc(imgPath) + '" alt="Image actualité" class="news-list-img"/>';
+        }
         return (
-          '<article>' +
-          '<div class="meta">' +
-          esc(it.date_label || '') +
-          '</div>' +
-          '<h2><a href="' +
-          esc(it.href || '#') +
-          '">' +
-          esc(it.title || '') +
-          '</a></h2>' +
-          '<p>' +
-          esc(it.excerpt || '') +
-          '</p></article>'
+          '<article class="news-list-flex">' +
+            (imgHtml ? '<div class="news-list-img-wrap">' + imgHtml + '</div>' : '') +
+            '<div class="news-list-txt">' +
+              '<div class="meta">' + esc(it.date_label || '') + '</div>' +
+              '<h2><a href="' + esc(it.href || '#') + '">' + esc(it.title || '') + '</a></h2>' +
+              '<p>' + esc(it.excerpt || '') + '</p>' +
+            '</div>' +
+          '</article>'
         );
       })
       .join('');
